@@ -1,0 +1,32 @@
+{
+  "exhibits": [
+    {
+      "title": "Hudson Light",
+      "artist": "Maria Velez",
+      "dates": "June – July 2026",
+      "status": "Now Showing",
+      "image": "assets/images/interior.jpg"
+    },
+    {
+      "title": "Peekskill Faces",
+      "artist": "James Okafor",
+      "dates": "Portrait series",
+      "status": "On the Walls",
+      "image": "assets/images/cafe_people.jpg"
+    },
+    {
+      "title": "Track Side",
+      "artist": "Group Show",
+      "dates": "Local & regional artists",
+      "status": "Rotating",
+      "image": "assets/images/cafe2.jpg"
+    },
+    {
+      "title": "Still Life, Still Warm",
+      "artist": "Dana Reyes",
+      "dates": "Mixed media",
+      "status": "Featured",
+      "image": "assets/images/coffee.jpg"
+    }
+  ]
+}

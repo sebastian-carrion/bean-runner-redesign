@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p site/css site/js site/assets/images site/content/events site/content/exhibits site/admin)",
+      "Bash(cp assets/* site/assets/images/)"
+    ]
+  }
+}

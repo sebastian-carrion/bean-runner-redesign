@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeanRunner Cafe — Prototype B</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ──────────────────────────────────────────────── */
+:root {
+  --espresso:  #1C0F0A;
+  --roast:     #2C1A10;
+  --amber:     #C8963E;
+  --gold:      #E8B860;
+  --cream:     #F5EFE0;
+  --parchment: #EDE5D0;
+  --linen:     #EEE9DF; /* Onyx's warm off-white */
+  --ash:       #5A5248;
+  --smoke:     #9A8F82;
+  --white:     #FAF7F2;
+  --ink:       #1A1614;
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --mono:      'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--ink); font-family: var(--sans); line-height: 1.65; overflow-x: hidden; }
+
+/* ─── PROTO BANNER ─────────────────────────────────────────── */
+.proto-banner {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  background: var(--espresso); color: var(--amber);
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .18em; text-align: center; padding: 6px 16px;
+  text-transform: uppercase;
+}
+.proto-banner a { color: var(--gold); text-decoration: none; margin-left: 16px; }
+
+/* ─── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+.announce-bar {
+  position: fixed; top: 28px; left: 0; right: 0; z-index: 998;
+  background: var(--linen); border-bottom: 1px solid rgba(28,15,10,.08);
+  height: 40px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.announce-ticker {
+  display: flex; gap: 0; white-space: nowrap;
+  animation: tickerScroll 28s linear infinite;
+}
+.announce-ticker span {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ash); padding: 0 40px;
+}
+.announce-ticker .dot { color: var(--amber); }
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── NAV ──────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 68px; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 68px;
+  background: rgba(250,247,242,0); backdrop-filter: blur(0px);
+  transition: background .4s, backdrop-filter .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(250,247,242,.96); backdrop-filter: blur(16px);
+  border-bottom-color: rgba(28,15,10,.07);
+}
+
+.nav-logo {
+  display: flex; align-items: baseline; gap: 10px; text-decoration: none;
+}
+.nav-logo-mark {
+  font-family: var(--serif); font-size: 20px; font-weight: 700;
+  color: var(--espresso); letter-spacing: -.01em; line-height: 1;
+  transition: color .3s;
+}
+nav:not(.scrolled) .nav-logo-mark { color: var(--cream); }
+.nav-logo-sub {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--smoke);
+}
+nav:not(.scrolled) .nav-logo-sub { color: rgba(245,239,224,.5); }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ash); text-decoration: none; transition: color .2s;
+}
+nav:not(.scrolled) .nav-links a { color: rgba(245,239,224,.65); }
+.nav-links a:hover { color: var(--amber); }
+nav:not(.scrolled) .nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--espresso); text-decoration: none;
+  border: 1px solid rgba(28,15,10,.25); padding: 9px 20px; border-radius: 1px;
+  transition: all .25s;
+}
+nav:not(.scrolled) .nav-cta {
+  color: var(--cream); border-color: rgba(245,239,224,.3);
+}
+.nav-cta:hover { background: var(--amber); border-color: var(--amber); color: var(--espresso); }
+nav:not(.scrolled) .nav-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--espresso); }
+
+/* ─── HERO ──────────────────────────────────────────────────── */
+.hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--espresso); overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('assets/interior.jpg') center center / cover no-repeat;
+  transform: scale(1.04);
+  animation: heroZoom 14s ease-out forwards;
+}
+@keyframes heroZoom { to { transform: scale(1); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(28,15,10,.72) 0%, rgba(28,15,10,.45) 50%, rgba(28,15,10,.78) 100%);
+}
+
+.hero-content {
+  position: relative; z-index: 2; text-align: center; max-width: 920px; padding: 0 40px;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 28px; display: block;
+  opacity: 0; animation: fadeUp .8s .3s forwards;
+}
+.hero-title {
+  font-family: var(--serif); font-size: clamp(42px, 7.5vw, 100px); font-weight: 400;
+  color: var(--cream); line-height: .95; letter-spacing: .18em; text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0; animation: fadeUp .9s .55s forwards;
+}
+.hero-title-alt {
+  font-family: var(--serif); font-size: clamp(22px, 3.5vw, 48px); font-weight: 400; font-style: italic;
+  color: var(--gold); letter-spacing: .06em; line-height: 1.2;
+  opacity: 0; animation: fadeUp .9s .8s forwards;
+}
+.hero-divider {
+  width: 1px; height: 56px; background: rgba(200,150,62,.4); margin: 32px auto;
+  opacity: 0; animation: fadeUp .7s 1s forwards;
+}
+.hero-sub {
+  font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(245,239,224,.7);
+  letter-spacing: .08em; line-height: 1.8; max-width: 380px; margin: 0 auto 36px;
+  opacity: 0; animation: fadeUp .8s 1.1s forwards;
+}
+.hero-ctas {
+  display: flex; gap: 14px; justify-content: center; align-items: center;
+  opacity: 0; animation: fadeUp .8s 1.3s forwards;
+}
+.hero-btn {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  text-decoration: none; padding: 14px 36px; border-radius: 1px; transition: all .25s;
+}
+.hero-btn-primary { background: var(--amber); color: var(--espresso); border: 1px solid var(--amber); }
+.hero-btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+.hero-btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(245,239,224,.3); }
+.hero-btn-ghost:hover { border-color: var(--cream); }
+
+.hero-scroll {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp .6s 1.8s forwards;
+}
+.hero-scroll-text {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,239,224,.4);
+}
+.hero-scroll-line {
+  width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(200,150,62,.5), transparent);
+  animation: scrollPulse 2s 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: .4; transform: scaleY(1); }
+  50%       { opacity: 1; transform: scaleY(1.15); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── MARQUEE STRIP ─────────────────────────────────────────── */
+.marquee-strip {
+  background: var(--espresso); height: 48px;
+  display: flex; align-items: center; overflow: hidden; border-top: 1px solid rgba(200,150,62,.15);
+}
+.marquee-track {
+  display: flex; white-space: nowrap; gap: 0;
+  animation: marqueeFwd 22s linear infinite;
+}
+.marquee-strip:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(245,239,224,.35); padding: 0 32px;
+}
+.marquee-track .mk { color: var(--amber); }
+@keyframes marqueeFwd {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── ABOUT (50/50 editorial) ──────────────────────────────── */
+.about-editorial {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 600px;
+}
+.about-img {
+  position: relative; overflow: hidden;
+  background: url('assets/cafe_people.jpg') center center / cover no-repeat;
+  min-height: 500px;
+}
+.about-img-inner {
+  position: absolute; inset: 0;
+  background: url('assets/cafe_people.jpg') center center / cover no-repeat;
+  transition: transform .8s ease;
+}
+.about-editorial:hover .about-img-inner { transform: scale(1.04); }
+.about-img-caption {
+  position: absolute; bottom: 24px; left: 24px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(245,239,224,.55); z-index: 2;
+}
+
+.about-text {
+  background: var(--linen); display: flex; flex-direction: column;
+  justify-content: center; padding: 80px 72px;
+}
+.about-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 28px; display: block;
+}
+.about-heading {
+  font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); font-weight: 400;
+  color: var(--espresso); line-height: 1.12; letter-spacing: -.01em; margin-bottom: 24px;
+}
+.about-heading em { font-style: italic; color: var(--amber); }
+.about-body {
+  font-size: 14.5px; color: var(--ash); line-height: 1.8; font-weight: 300;
+  max-width: 400px; margin-bottom: 40px;
+}
+.about-stats {
+  display: grid; grid-template-columns: repeat(3, auto); gap: 32px; margin-bottom: 44px;
+  border-top: 1px solid rgba(28,15,10,.1); padding-top: 32px; width: fit-content;
+}
+.about-stat-num {
+  font-family: var(--serif); font-size: 32px; font-weight: 400; color: var(--espresso); line-height: 1;
+}
+.about-stat-num em { font-style: normal; color: var(--amber); font-size: 24px; }
+.about-stat-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--smoke); margin-top: 5px;
+}
+.about-link {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--espresso); text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid rgba(28,15,10,.2); padding-bottom: 4px;
+  transition: border-color .2s, color .2s;
+}
+.about-link:hover { color: var(--amber); border-color: var(--amber); }
+.about-link::after { content: '→'; transition: transform .2s; }
+.about-link:hover::after { transform: translateX(4px); }
+
+/* ─── FEATURE BLOCK ─────────────────────────────────────────── */
+.feature-block {
+  background: var(--roast); padding: 100px 80px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.feature-block::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('assets/coffee.jpg') center center / cover no-repeat;
+  opacity: .12;
+}
+.feature-block-inner { position: relative; z-index: 1; }
+.feature-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 28px; display: block;
+}
+.feature-quote {
+  font-family: var(--serif); font-size: clamp(28px, 4vw, 52px); font-weight: 400;
+  color: var(--cream); line-height: 1.2; letter-spacing: .04em; max-width: 780px; margin: 0 auto 36px;
+}
+.feature-quote em { color: var(--gold); font-style: italic; }
+.feature-loc {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(245,239,224,.35);
+}
+
+/* ─── HOURS STRIP ───────────────────────────────────────────── */
+.hours-strip {
+  background: var(--espresso); padding: 40px 80px;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  border-top: 1px solid rgba(200,150,62,.1);
+}
+.hours-strip-label {
+  font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--cream);
+  white-space: nowrap;
+}
+.hours-strip-label em { font-style: italic; color: var(--gold); }
+.hours-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+.hours-col-days {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 4px;
+}
+.hours-col-time {
+  font-family: var(--sans); font-size: 15px; font-weight: 300; color: var(--cream);
+}
+.hours-address {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
+  color: var(--smoke); line-height: 1.7; text-align: right;
+}
+
+/* ─── GALLERY (editorial asymmetric) ───────────────────────── */
+.gallery-section { background: var(--ink); padding: 80px; }
+.gallery-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 48px;
+}
+.gallery-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 12px; display: block;
+}
+.gallery-title {
+  font-family: var(--serif); font-size: clamp(24px, 3.5vw, 40px); font-weight: 400;
+  color: var(--cream); line-height: 1.1; letter-spacing: .05em;
+}
+.gallery-title em { font-style: italic; color: var(--gold); }
+.gallery-link {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--smoke); text-decoration: none; transition: color .2s;
+}
+.gallery-link:hover { color: var(--amber); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: 300px 240px;
+  gap: 3px;
+}
+.g-cell {
+  overflow: hidden; position: relative; cursor: default;
+  background: var(--roast);
+}
+.g-cell-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform .7s ease, filter .5s;
+  filter: brightness(.85);
+}
+.g-cell:hover .g-cell-bg { transform: scale(1.05); filter: brightness(1); }
+.g-cell:nth-child(1) { grid-row: 1 / 3; }
+.g-cell:nth-child(1) .g-cell-bg { background-image: url('assets/interior.jpg'); }
+.g-cell:nth-child(2) .g-cell-bg { background-image: url('assets/cafe2.jpg'); }
+.g-cell:nth-child(3) .g-cell-bg { background-image: url('assets/cafe_people.jpg'); }
+.g-cell-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(28,15,10,.82) 0%, rgba(28,15,10,.05) 55%, transparent 100%);
+}
+.g-cell-meta {
+  position: absolute; bottom: 20px; left: 22px; z-index: 2;
+}
+.g-cell-label {
+  font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--cream); line-height: 1.3;
+}
+.g-cell-sub {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(245,239,224,.45); margin-top: 3px;
+}
+
+/* ─── MENU EDITORIAL (50/50 reversed) ──────────────────────── */
+.menu-editorial {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 560px;
+}
+.menu-text {
+  background: var(--espresso); display: flex; flex-direction: column;
+  justify-content: center; padding: 80px 72px;
+}
+.menu-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 28px; display: block;
+}
+.menu-heading {
+  font-family: var(--serif); font-size: clamp(28px, 3.2vw, 40px); font-weight: 400;
+  color: var(--cream); line-height: 1.12; margin-bottom: 22px;
+}
+.menu-heading em { font-style: italic; color: var(--gold); }
+.menu-body { font-size: 14px; color: rgba(245,239,224,.6); line-height: 1.8; font-weight: 300; margin-bottom: 40px; max-width: 380px; }
+.menu-cats {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px;
+}
+.menu-cat {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--smoke); border: 1px solid rgba(200,150,62,.2); padding: 6px 14px; border-radius: 1px;
+  transition: all .2s; cursor: default;
+}
+.menu-cat:hover { color: var(--amber); border-color: var(--amber); }
+.menu-cta-link {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--amber); text-decoration: none; display: inline-flex; align-items: center; gap: 12px;
+  transition: gap .2s;
+}
+.menu-cta-link:hover { gap: 18px; }
+.menu-img {
+  position: relative; overflow: hidden;
+  background: url('assets/sandwich.jpg') center center / cover no-repeat; min-height: 500px;
+}
+.menu-img-inner {
+  position: absolute; inset: 0;
+  background: url('assets/sandwich.jpg') center center / cover no-repeat;
+  transition: transform .8s ease;
+}
+.menu-editorial:hover .menu-img-inner { transform: scale(1.04); }
+
+/* ─── REVIEWS ───────────────────────────────────────────────── */
+.reviews-section { background: var(--linen); padding: 100px 80px; }
+.reviews-header { text-align: center; margin-bottom: 64px; }
+.reviews-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 20px; display: block;
+}
+.reviews-title {
+  font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 400;
+  color: var(--espresso); letter-spacing: .06em; line-height: 1.1;
+}
+.reviews-title em { font-style: italic; color: var(--amber); }
+
+.reviews-stage { position: relative; overflow: hidden; }
+.review-card {
+  display: none; padding: 56px 64px; background: var(--white);
+  border: 1px solid rgba(28,15,10,.07);
+  max-width: 800px; margin: 0 auto;
+}
+.review-card.active { display: block; }
+
+.review-quote-big {
+  font-family: var(--serif); font-size: 72px; font-weight: 900; line-height: 1;
+  color: rgba(200,150,62,.15); margin-bottom: -20px; display: block;
+}
+.review-text {
+  font-family: var(--serif); font-size: clamp(17px, 2vw, 22px); font-weight: 400; font-style: italic;
+  color: var(--espresso); line-height: 1.6; margin-bottom: 36px; max-width: 620px;
+}
+.review-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.review-meta-name {
+  font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--roast);
+}
+.review-meta-detail {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--smoke); margin-top: 2px;
+}
+.review-stars { display: flex; gap: 3px; }
+.review-star { color: var(--amber); font-size: 14px; }
+
+.reviews-nav {
+  display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px;
+}
+.rev-btn {
+  background: none; border: 1px solid rgba(28,15,10,.15); width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  font-size: 16px; color: var(--ash); transition: all .2s; border-radius: 1px;
+}
+.rev-btn:hover { border-color: var(--amber); color: var(--amber); }
+.rev-dots { display: flex; gap: 8px; }
+.rev-dot {
+  width: 5px; height: 5px; border-radius: 50%; background: rgba(28,15,10,.15);
+  border: none; cursor: pointer; padding: 0; transition: background .2s;
+}
+.rev-dot.active { background: var(--amber); }
+
+/* ─── ACCOLADES TICKER ──────────────────────────────────────── */
+.accolades-strip {
+  background: var(--espresso); padding: 56px 0; overflow: hidden; border-top: 1px solid rgba(200,150,62,.1);
+}
+.accolades-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--amber); text-align: center; display: block; margin-bottom: 32px;
+}
+.accolades-ticker-wrap { overflow: hidden; }
+.accolades-ticker {
+  display: flex; gap: 0; white-space: nowrap;
+  animation: marqueeFwd 32s linear infinite;
+}
+.accolades-ticker:hover { animation-play-state: paused; }
+.accolade-item {
+  display: inline-flex; align-items: center; gap: 12px; padding: 0 48px;
+}
+.accolade-num {
+  font-family: var(--serif); font-size: 28px; font-weight: 400; font-style: italic; color: var(--gold);
+}
+.accolade-text { font-size: 12px; color: rgba(245,239,224,.5); line-height: 1.4; max-width: 140px; }
+.accolade-text strong { color: var(--cream); display: block; font-size: 11px; font-weight: 500; }
+.accolade-divider { width: 1px; height: 40px; background: rgba(200,150,62,.2); margin: 0 8px; }
+
+/* ─── VISIT CTA ─────────────────────────────────────────────── */
+.visit-cta {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 500px;
+}
+.visit-img {
+  position: relative; overflow: hidden;
+  background: url('assets/interior.jpg') center center / cover no-repeat;
+}
+.visit-img-inner {
+  position: absolute; inset: 0;
+  background: url('assets/interior.jpg') center center / cover no-repeat;
+  transition: transform .8s;
+}
+.visit-cta:hover .visit-img-inner { transform: scale(1.04); }
+.visit-text {
+  background: var(--roast); display: flex; flex-direction: column;
+  justify-content: center; padding: 80px 72px;
+}
+.visit-eyebrow {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 28px; display: block;
+}
+.visit-heading {
+  font-family: var(--serif); font-size: clamp(26px, 3.5vw, 42px); font-weight: 400;
+  color: var(--cream); line-height: 1.1; letter-spacing: .04em; margin-bottom: 22px;
+}
+.visit-heading em { font-style: italic; color: var(--gold); }
+.visit-body { font-size: 14px; color: rgba(245,239,224,.6); line-height: 1.8; font-weight: 300; margin-bottom: 44px; max-width: 360px; }
+.visit-btns { display: flex; flex-direction: column; gap: 14px; width: fit-content; }
+.visit-btn {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  text-decoration: none; padding: 14px 36px; border-radius: 1px; text-align: center;
+  transition: all .25s; display: block;
+}
+.visit-btn-primary { background: var(--amber); color: var(--espresso); border: 1px solid var(--amber); }
+.visit-btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+.visit-btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(245,239,224,.2); }
+.visit-btn-ghost:hover { border-color: var(--cream); }
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+footer {
+  background: var(--espresso); padding: 64px 80px 40px;
+  border-top: 1px solid rgba(200,150,62,.1);
+}
+.footer-top {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 36px;
+}
+.footer-brand-name {
+  font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--amber); display: block; margin-bottom: 4px;
+}
+.footer-brand-sub {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: var(--smoke); display: block; margin-bottom: 16px;
+}
+.footer-brand-desc { font-size: 13px; color: var(--smoke); line-height: 1.75; margin-bottom: 24px; max-width: 230px; font-weight: 300; }
+.footer-brand-never {
+  font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(200,150,62,.5);
+  letter-spacing: .04em;
+}
+.footer-col-title {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 20px; display: block;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  font-size: 13px; color: var(--smoke); text-decoration: none; font-weight: 300; transition: color .2s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-contact-line { font-size: 13px; color: var(--smoke); line-height: 1.8; font-weight: 300; }
+.footer-contact-line strong { color: var(--parchment); font-weight: 400; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-family: var(--mono); font-size: 9.5px; color: var(--ash); letter-spacing: .06em; }
+.footer-proto { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; color: rgba(200,150,62,.4); text-transform: uppercase; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .about-editorial, .menu-editorial, .visit-cta { grid-template-columns: 1fr; }
+  .about-img, .menu-img, .visit-img { min-height: 320px; }
+  .about-text, .menu-text, .visit-text { padding: 56px 32px; }
+  .gallery-section, .reviews-section, .feature-block { padding: 60px 24px; }
+  .hours-strip { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
+  .hours-address { text-align: left; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  footer { padding: 48px 24px 32px; }
+  .menu-editorial { grid-template-columns: 1fr; }
+  .menu-img { order: -1; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: 300px 200px 200px; }
+  .g-cell:nth-child(1) { grid-row: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROTO BANNER -->
+<div class="proto-banner">
+  Prototype B — Onyx-Inspired Direction
+  <a href="BeanRunner_Prototype.html">← View Prototype A</a>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <div class="announce-ticker">
+    <span>Open Daily</span><span class="dot">·</span>
+    <span>Mon–Fri 7AM – 9PM</span><span class="dot">·</span>
+    <span>Sat–Sun 8AM – 9PM</span><span class="dot">·</span>
+    <span>201 S. Division St, Peekskill NY</span><span class="dot">·</span>
+    <span>914-737-1701</span><span class="dot">·</span>
+    <span>Breakfast Served All Day</span><span class="dot">·</span>
+    <!-- duplicate for seamless loop -->
+    <span>Open Daily</span><span class="dot">·</span>
+    <span>Mon–Fri 7AM – 9PM</span><span class="dot">·</span>
+    <span>Sat–Sun 8AM – 9PM</span><span class="dot">·</span>
+    <span>201 S. Division St, Peekskill NY</span><span class="dot">·</span>
+    <span>914-737-1701</span><span class="dot">·</span>
+    <span>Breakfast Served All Day</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-mark">BeanRunner</span>
+    <span class="nav-logo-sub">Cafe · Peekskill</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="BeanRunner_Menu.html" target="_blank" class="nav-cta">View Menu</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Peekskill, New York · Est. 2010</span>
+    <h1 class="hero-title">Bean Runner</h1>
+    <div class="hero-title-alt">Cafe &amp; Espresso Bar</div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Your neighborhood gathering place for great food, craft coffee, and community — in the heart of Peekskill.</p>
+    <div class="hero-ctas">
+      <a href="BeanRunner_Menu.html" target="_blank" class="hero-btn hero-btn-primary">Explore Menu</a>
+      <a href="#about" class="hero-btn hero-btn-ghost">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="mk">Breakfast</span><span>·</span>
+    <span>Weekend Brunch</span><span>·</span>
+    <span class="mk">Sandwiches</span><span>·</span>
+    <span>Organic Salads</span><span>·</span>
+    <span class="mk">Fresh Smoothies</span><span>·</span>
+    <span>Espresso Bar</span><span>·</span>
+    <span class="mk">Wine &amp; Beer</span><span>·</span>
+    <span>Desserts</span><span>·</span>
+    <span class="mk">Kids Menu</span><span>·</span>
+    <span>Gluten-Free Options</span><span>·</span>
+    <!-- dupe -->
+    <span class="mk">Breakfast</span><span>·</span>
+    <span>Weekend Brunch</span><span>·</span>
+    <span class="mk">Sandwiches</span><span>·</span>
+    <span>Organic Salads</span><span>·</span>
+    <span class="mk">Fresh Smoothies</span><span>·</span>
+    <span>Espresso Bar</span><span>·</span>
+    <span class="mk">Wine &amp; Beer</span><span>·</span>
+    <span>Desserts</span><span>·</span>
+    <span class="mk">Kids Menu</span><span>·</span>
+    <span>Gluten-Free Options</span><span>·</span>
+  </div>
+</div>
+
+<!-- ABOUT EDITORIAL -->
+<section class="about-editorial" id="about">
+  <div class="about-img">
+    <div class="about-img-inner"></div>
+    <div class="about-img-caption">BeanRunner Cafe · Peekskill</div>
+  </div>
+  <div class="about-text">
+    <span class="about-eyebrow">Our Story</span>
+    <h2 class="about-heading">More than a cafe.<br><em>A place to belong.</em></h2>
+    <p class="about-body">
+      BeanRunner has been a fixture in Peekskill since 2010 — a place where the espresso is serious, the food is made with care, and everyone walks in as a stranger and leaves as a regular. Named for the historic Peekskill running culture, we believe great coffee and great community run side by side.
+    </p>
+    <div class="about-stats">
+      <div>
+        <div class="about-stat-num">15<em>+</em></div>
+        <div class="about-stat-label">Years Serving</div>
+      </div>
+      <div>
+        <div class="about-stat-num">4.3<em>★</em></div>
+        <div class="about-stat-label">TripAdvisor</div>
+      </div>
+      <div>
+        <div class="about-stat-num">#17</div>
+        <div class="about-stat-label">in Peekskill</div>
+      </div>
+    </div>
+    <a href="#gallery" class="about-link">See the space</a>
+  </div>
+</section>
+
+<!-- FEATURE BLOCK -->
+<div class="feature-block">
+  <div class="feature-block-inner">
+    <span class="feature-label">Our Philosophy</span>
+    <p class="feature-quote">Breakfast served all day,<br><em>every day</em> — because a good meal deserves no curfew.</p>
+    <span class="feature-loc">201 S. Division St · Peekskill, NY 10566</span>
+  </div>
+</div>
+
+<!-- HOURS -->
+<div class="hours-strip">
+  <div class="hours-strip-label">We're <em>open</em></div>
+  <div class="hours-cols">
+    <div>
+      <div class="hours-col-days">Mon – Fri</div>
+      <div class="hours-col-time">7:00 AM – 9:00 PM</div>
+    </div>
+    <div>
+      <div class="hours-col-days">Saturday</div>
+      <div class="hours-col-time">8:00 AM – 9:00 PM</div>
+    </div>
+    <div>
+      <div class="hours-col-days">Sunday</div>
+      <div class="hours-col-time">8:00 AM – 4:00 PM</div>
+    </div>
+  </div>
+  <div class="hours-address">
+    201 S. Division Street<br>
+    Peekskill, NY 10566<br>
+    <strong style="color:var(--amber)">(914) 737-1701</strong>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <div>
+      <span class="gallery-eyebrow">Inside BeanRunner</span>
+      <h2 class="gallery-title">The space,<br><em>the vibe</em></h2>
+    </div>
+    <a href="#" class="gallery-link">Instagram ↗</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-cell">
+      <div class="g-cell-bg" style="background-image:url('assets/interior.jpg')"></div>
+      <div class="g-cell-overlay"></div>
+      <div class="g-cell-meta">
+        <div class="g-cell-label">The Interior</div>
+        <div class="g-cell-sub">Dine In · Peekskill</div>
+      </div>
+    </div>
+    <div class="g-cell">
+      <div class="g-cell-bg" style="background-image:url('assets/cafe2.jpg')"></div>
+      <div class="g-cell-overlay"></div>
+      <div class="g-cell-meta">
+        <div class="g-cell-label">Espresso Bar</div>
+        <div class="g-cell-sub">Track Side Espresso</div>
+      </div>
+    </div>
+    <div class="g-cell">
+      <div class="g-cell-bg" style="background-image:url('assets/cafe_people.jpg')"></div>
+      <div class="g-cell-overlay"></div>
+      <div class="g-cell-meta">
+        <div class="g-cell-label">The Community</div>
+        <div class="g-cell-sub">Peekskill, NY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU EDITORIAL -->
+<section class="menu-editorial">
+  <div class="menu-text">
+    <span class="menu-eyebrow">Our Menu</span>
+    <h2 class="menu-heading">Eat well.<br><em>Live well.</em></h2>
+    <p class="menu-body">
+      From morning omelets to afternoon smoothies, from Nutella crepes to craft espresso — everything is made to order with real ingredients and real care.
+    </p>
+    <div class="menu-cats">
+      <span class="menu-cat">Breakfast</span>
+      <span class="menu-cat">Brunch</span>
+      <span class="menu-cat">Salads</span>
+      <span class="menu-cat">Sandwiches</span>
+      <span class="menu-cat">Smoothies</span>
+      <span class="menu-cat">Espresso</span>
+      <span class="menu-cat">Wine</span>
+      <span class="menu-cat">Desserts</span>
+    </div>
+    <a href="BeanRunner_Menu.html" target="_blank" class="menu-cta-link">View Full Menu →</a>
+  </div>
+  <div class="menu-img">
+    <div class="menu-img-inner"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header">
+    <span class="reviews-eyebrow">What People Say</span>
+    <h2 class="reviews-title">Stories From<br><em>The Bean Runner</em></h2>
+  </div>
+  <div class="reviews-stage">
+
+    <div class="review-card active">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">This is a real gem of Peekskill — great coffee and even better food. The omelet was perfectly made and the Nutella crepe had me coming back the next morning. Staff is incredibly warm and welcoming.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">ChanteuseSimone</div>
+          <div class="review-meta-detail">TripAdvisor · August 2011</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">Love this place! Best breakfast spot in Peekskill by far. The Belgian waffles are incredible and the coffee is always on point. Been coming here for years and it never disappoints.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">Larry K.</div>
+          <div class="review-meta-detail">TripAdvisor · March 2017</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">We came for brunch and ended up staying two hours. The vibe is unmatched — it feels like someone's living room, but with really good food and a proper espresso bar. Will absolutely be back.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">Bonnie M.</div>
+          <div class="review-meta-detail">TripAdvisor · August 2024</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">My go-to spot whenever I'm in Peekskill. The Chicken &amp; Waffle is the best thing I've eaten this year, and the staff remembered my order by my third visit. That's what community feels like.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">Antonia S.</div>
+          <div class="review-meta-detail">TripAdvisor · April 2018</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">Stopped in on a road trip and this place completely blew my expectations. Excellent smoothies, great sandwiches, and one of the best lattes I've had outside of NYC. Hidden treasure.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">FredLawrence_NC</div>
+          <div class="review-meta-detail">TripAdvisor · October 2017</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <span class="review-quote-big">"</span>
+      <p class="review-text">Worth every minute of the drive up from the city. The brunch combo is a complete steal, the space has this beautiful neighborhood energy, and the cappuccino is seriously world-class. Became my favorite instantly.</p>
+      <div class="review-footer">
+        <div>
+          <div class="review-meta-name">Jennella Y.</div>
+          <div class="review-meta-detail">TripAdvisor · September 2020</div>
+        </div>
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="reviews-nav">
+    <button class="rev-btn" onclick="revPrev()">&#8592;</button>
+    <div class="rev-dots">
+      <button class="rev-dot active" onclick="revGo(0)"></button>
+      <button class="rev-dot" onclick="revGo(1)"></button>
+      <button class="rev-dot" onclick="revGo(2)"></button>
+      <button class="rev-dot" onclick="revGo(3)"></button>
+      <button class="rev-dot" onclick="revGo(4)"></button>
+      <button class="rev-dot" onclick="revGo(5)"></button>
+    </div>
+    <button class="rev-btn" onclick="revNext()">&#8594;</button>
+  </div>
+</section>
+
+<!-- ACCOLADES TICKER -->
+<div class="accolades-strip">
+  <span class="accolades-label">Recognition &amp; Awards</span>
+  <div class="accolades-ticker-wrap">
+    <div class="accolades-ticker">
+      <div class="accolade-item">
+        <span class="accolade-num">4.3★</span>
+        <div class="accolade-text"><strong>TripAdvisor Rating</strong>46 Reviews</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">#17</span>
+        <div class="accolade-text"><strong>Best in Peekskill</strong>TripAdvisor 2024</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">15+</span>
+        <div class="accolade-text"><strong>Years Open</strong>Serving Since 2010</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">100%</span>
+        <div class="accolade-text"><strong>Made To Order</strong>Real Ingredients</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">11</span>
+        <div class="accolade-text"><strong>Menu Categories</strong>Something for Everyone</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <!-- dupe -->
+      <div class="accolade-item">
+        <span class="accolade-num">4.3★</span>
+        <div class="accolade-text"><strong>TripAdvisor Rating</strong>46 Reviews</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">#17</span>
+        <div class="accolade-text"><strong>Best in Peekskill</strong>TripAdvisor 2024</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">15+</span>
+        <div class="accolade-text"><strong>Years Open</strong>Serving Since 2010</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">100%</span>
+        <div class="accolade-text"><strong>Made To Order</strong>Real Ingredients</div>
+      </div>
+      <div class="accolade-divider"></div>
+      <div class="accolade-item">
+        <span class="accolade-num">11</span>
+        <div class="accolade-text"><strong>Menu Categories</strong>Something for Everyone</div>
+      </div>
+      <div class="accolade-divider"></div>
+    </div>
+  </div>
+</div>
+
+<!-- VISIT CTA -->
+<section class="visit-cta" id="visit">
+  <div class="visit-img">
+    <div class="visit-img-inner"></div>
+  </div>
+  <div class="visit-text">
+    <span class="visit-eyebrow">Come Visit Us</span>
+    <h2 class="visit-heading">Every seat is<br>a <em>good seat</em></h2>
+    <p class="visit-body">Walk in, sit down, and feel at home. Whether it's your first time or your hundredth, we'll have your order ready — and probably already know your name.</p>
+    <div class="visit-btns">
+      <a href="BeanRunner_Menu.html" target="_blank" class="visit-btn visit-btn-primary">View Full Menu</a>
+      <a href="https://maps.google.com/?q=201+S+Division+St+Peekskill+NY" target="_blank" class="visit-btn visit-btn-ghost">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-brand-name">BeanRunner</span>
+      <span class="footer-brand-sub">Cafe · Peekskill, NY</span>
+      <p class="footer-brand-desc">A neighborhood cafe in the heart of Peekskill. Real food, real coffee, real community — since 2010.</p>
+      <div class="footer-brand-never">Never settle for a bad cup.</div>
+    </div>
+    <div>
+      <span class="footer-col-title">Visit</span>
+      <ul class="footer-links">
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Hours</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Connect</span>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">TripAdvisor</a></li>
+        <li><a href="#">Google Maps</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <div class="footer-contact-line"><strong>(914) 737-1701</strong></div>
+      <div class="footer-contact-line" style="margin-top:8px">201 S. Division Street<br>Peekskill, NY 10566</div>
+      <div class="footer-contact-line" style="margin-top:8px">beanman.beanrunnercafe<br>@gmail.com</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 BeanRunner Cafe. All rights reserved.</span>
+    <span class="footer-proto">Prototype B — Design Concept</span>
+  </div>
+</footer>
+
+<script>
+/* ── NAV SCROLL ─────────────────────────────────────────── */
+(function() {
+  var nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+})();
+
+/* ── REVIEWS CAROUSEL ────────────────────────────────────── */
+(function() {
+  var cur = 0;
+  var cards, dots, timer;
+  function init() {
+    cards = document.querySelectorAll('.review-card');
+    dots  = document.querySelectorAll('.rev-dot');
+    if (!cards.length) return;
+    timer = setInterval(function() { go(cur + 1); }, 6000);
+  }
+  function go(idx) {
+    cards[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (idx + cards.length) % cards.length;
+    cards[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  window.revGo   = function(i) { clearInterval(timer); go(i); timer = setInterval(function(){ go(cur+1); }, 6000); };
+  window.revNext = function()  { revGo(cur + 1); };
+  window.revPrev = function()  { revGo(cur - 1); };
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>

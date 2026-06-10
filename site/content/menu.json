@@ -1,0 +1,151 @@
+{
+  "note": "Prices subject to change. Please ask about daily specials.",
+  "categories": [
+    {
+      "id": "breakfast",
+      "title": "Breakfast",
+      "note": "Served all day.",
+      "items": [
+        { "name": "BRC Egg Sandwich Special", "desc": "Ham, bacon, or turkey with 2 eggs & cheese on ciabatta roll or bagel", "price": "$7.14" },
+        { "name": "BRC Egg Sandwich with Coffee", "desc": "Egg sandwich on ciabatta or bagel with a small gourmet coffee", "price": "$9.39" },
+        { "name": "Two Eggs", "desc": "Any style with toast", "price": "$7.20" },
+        { "name": "Cheese Omelet", "desc": "Your choice of American, Swiss, or Cheddar cheese", "price": "$9.95" },
+        { "name": "Ham & Cheese Omelet", "desc": "Ham with your choice of American, Swiss, or Cheddar cheese", "price": "$10.35" },
+        { "name": "Sausage & Pepper Omelet", "desc": "Sausage and peppers", "price": "$10.35" },
+        { "name": "Vegetarian Omelet", "desc": "Fresh tomatoes, onions, green and red peppers", "price": "$9.95", "badge": "veg" },
+        { "name": "Greek Omelet", "desc": "Fresh spinach, tomato & feta cheese", "price": "$10.35", "badge": "veg" },
+        { "name": "Belgian Waffles", "desc": "Baked fresh, powdered sugar & syrup. Add maple syrup +$0.75, berries or bananas +$1.45, Nutella +$1.45", "price": "$7.95" },
+        { "name": "Chicken & Waffle", "desc": "Southern fried chicken on a fresh Belgian waffle", "price": "$16.50", "image": "assets/images/menu/chicken-waffle.jpg" },
+        { "name": "Pancakes", "desc": "2 made to order, powdered sugar & syrup. Add maple syrup +$1, berries or bananas +$1.55", "price": "$7.75" },
+        { "name": "French Toast", "desc": "Made to order, powdered sugar & syrup", "price": "$7.80" },
+        { "name": "Nutella Crepe", "desc": "Fresh strawberries & bananas, Nutella, whipped cream & chocolate sauce in a crepe", "price": "$9.85" },
+        { "name": "Oatmeal with Berries", "desc": "With fresh berries & pure maple syrup", "price": "$7.65", "badge": "veg" },
+        { "name": "Yogurt Parfait", "desc": "With fresh fruit & granola", "price": "$5.95", "badge": "veg" },
+        { "name": "Fresh Fruit Cup", "desc": "Seasonal fresh fruit", "price": "$5.85", "badge": "vegan" },
+        { "name": "Bagel or Ciabatta Roll", "desc": "With butter or cream cheese & jelly", "price": "$3.80" },
+        { "name": "Assorted Muffins & Croissants", "desc": "Baked fresh daily", "price": "$4.50" },
+        { "name": "Sides", "desc": "Home fries, grits, fruit, bacon, ham, sausage, turkey bacon, or chicken", "price": "from $3.25" }
+      ]
+    },
+    {
+      "id": "brunch",
+      "title": "Weekend Brunch",
+      "note": "Saturday & Sunday.",
+      "items": [
+        { "name": "Brunch Combo", "desc": "2 eggs any style OR omelet — pancakes OR Belgian waffle — bacon, turkey bacon, ham, sausage, or fresh fruit — orange juice, coffee, or tea — mimosa or sangria", "price": "$27.95", "badge": "special", "image": "assets/images/menu/brunch-combo.jpg" }
+      ]
+    },
+    {
+      "id": "salads",
+      "title": "Organic Mixed Greens Salads",
+      "items": [
+        { "name": "Greek Salmon", "desc": "Mixed greens, salmon fillets, olives, onions, feta cheese, cucumbers, tomatoes & ranch or balsamic dressing", "price": "$15.55", "image": "assets/images/menu/greek-salmon.jpg" },
+        { "name": "Winter & Summer Games", "desc": "Mixed greens, apples, strawberries, walnuts, feta, dried cranberries & raspberry vinaigrette or lime-cilantro dressing. Add chicken +$1.55", "price": "$13.30", "badge": "veg" },
+        { "name": "Mediterranean Meter", "desc": "Mixed greens, cucumbers, tomatoes, red onions, olives, feta, chicken & balsamic vinaigrette, hummus and pita wedges", "price": "$15.35" },
+        { "name": "Fiesta Finish Line", "desc": "Mixed greens, avocado, black bean & sweet corn, onions, peppers, cheddar, salsa, sour cream, cherry tomatoes, cucumbers, chicken & lime-cilantro dressing", "price": "$15.25" }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "title": "Sandwiches, Pizza & Soups",
+      "note": "All sandwiches served with potato chips. Available as lettuce wraps!",
+      "items": [
+        { "name": "Runners' Club", "desc": "Grilled chicken, roasted red peppers, mozzarella, avocado, tomatoes & balsamic vinaigrette on spinach wrap or wedge roll", "price": "$13.05", "image": "assets/images/menu/runners-club.jpg" },
+        { "name": "Cross Country", "desc": "Chicken, guacamole, grilled onions and peppers, cheddar cheese, salsa, sour cream & lettuce on spinach wrap", "price": "$13.35" },
+        { "name": "High Jump", "desc": "Jerk chicken, parmesan cheese, romaine lettuce, tomato & Caesar dressing on panini", "price": "$12.95" },
+        { "name": "Olympic Mile", "desc": "Turkey, ham & Swiss cheese rubbed with mustard and grilled on garlic drizzled panini", "price": "$12.95" },
+        { "name": "Flatbush Jog", "desc": "Hot pastrami, Swiss cheese & mustard on rye bread with coleslaw and pickle", "price": "$13.25" },
+        { "name": "Freestyle Tuna", "desc": "Tuna salad, lettuce, tomato & avocado on rye bread with coleslaw and pickle", "price": "$13.15" },
+        { "name": "Hurdle", "desc": "Turkey, bacon, smoked Gouda, lettuce, tomato & sesame-ginger dressing on panini", "price": "$13.35" },
+        { "name": "Philly Cheesesteak", "desc": "Thinly sliced steak, red onions, green & red peppers and white American cheese on toasted wedge", "price": "$13.35" },
+        { "name": "Gyros", "desc": "Sliced lamb, feta cheese, black olives, lettuce, tomato & onions with tzatziki sauce on warm pita bread", "price": "$13.50" },
+        { "name": "Discus Pizza", "desc": "Grilled chopped tomato, feta or mozzarella & fresh basil on panini. Add buffalo chicken +$2.95, roasted red peppers +$1.75, gyro lamb +$3", "price": "$12.35", "badge": "veg" },
+        { "name": "Jerk or Baked Salmon Sandwich", "desc": "Salmon filet, lettuce, tomato, avocado & cucumber with tzatziki sauce on toasted ciabatta", "price": "$15.35" },
+        { "name": "Jamaican Beef Patties", "desc": "Add cheese +$1.25", "price": "$4.65" },
+        { "name": "Soups of the Day", "desc": "Made fresh — ask your server", "price": "Cup $8.35 · Bowl $9.35" },
+        { "name": "½ Soup, Sandwich or Salad", "desc": "With cup of soup $13.75, with bowl add $1.00. Salmon add $2.75", "price": "$14.30" }
+      ]
+    },
+    {
+      "id": "veggie",
+      "title": "Verifiably Veggie",
+      "items": [
+        { "name": "Coconut-Curry Chickpeas", "desc": "Minced garlic, ginger, coconut milk, red onions, red peppers, maple syrup, lime juice & basil. Bowl with pita wedges, spinach wrap, or salad", "price": "$14.15", "badge": "vegan", "image": "assets/images/menu/coconut-curry.jpg" },
+        { "name": "The Bolt", "desc": "Avocado, mixed greens, jerk chickpeas, pineapple, red onions, red peppers, mushrooms, cucumbers, tomato & lime-cilantro dressing on spinach wrap or as salad", "price": "$13.45", "badge": "vegan" },
+        { "name": "The Starting Line", "desc": "Black beans, corn, red & green peppers, mixed greens & tomatoes with lime-cilantro dressing on spinach wrap or as salad", "price": "$13.25", "badge": "vegan" },
+        { "name": "Pole Vault", "desc": "Roasted red peppers, mushrooms, red onions, spinach, cucumbers & sweet chili dressing on spinach wrap or wedge roll", "price": "$13.50", "badge": "veg" }
+      ]
+    },
+    {
+      "id": "smoothies",
+      "title": "Fresh Fruit Smoothies",
+      "note": "16 oz · Almond, oat, or coconut milk substitution +$0.75–$0.95",
+      "items": [
+        { "name": "Mixed Fruit Splash", "desc": "Strawberry, banana, mango, agave & pineapple juice", "price": "$7.90", "badge": "vegan" },
+        { "name": "Strawberry/Banana Bump", "desc": "Strawberries, bananas, agave & milk", "price": "$7.75", "badge": "veg" },
+        { "name": "Peanut Butter Blast", "desc": "Peanut butter, strawberry, banana, mango, agave & milk. Add raw cashews +$1.50", "price": "$7.95", "badge": "veg" },
+        { "name": "Banana-Mango Mania", "desc": "Banana, mango, yogurt, agave & milk", "price": "$7.75", "badge": "veg" },
+        { "name": "Tropical Summer Splash", "desc": "Mango, banana, piña colada syrup, agave & pineapple juice", "price": "$7.95", "badge": "vegan" }
+      ]
+    },
+    {
+      "id": "kids",
+      "title": "Junior Games for Kids",
+      "items": [
+        { "name": "Pancakes (2)", "desc": "Two fluffy pancakes", "price": "$6.75", "badge": "veg" },
+        { "name": "Peanut Butter & Grape Jam", "desc": "A classic", "price": "$5.95", "badge": "veg" },
+        { "name": "Grilled Cheese", "desc": "On white or wheat", "price": "$6.95", "badge": "veg" },
+        { "name": "BLT", "desc": "Bacon, lettuce & tomato on white or wheat with apple slices. Panini add $1.50, chips add $1.75", "price": "$8.75" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "title": "Desserts",
+      "items": [
+        { "name": "Nutella Crepe", "desc": "Fresh strawberries & bananas, Nutella, whipped cream & chocolate sauce wrapped in a crepe", "price": "$9.85", "image": "assets/images/menu/nutella-crepe.jpg" },
+        { "name": "Hot Fudge Brownie & Gelato", "desc": "Warm brownie, vanilla gelato, hot fudge", "price": "$7.75" },
+        { "name": "Cheesecake", "desc": "Plain $8.75 · With strawberries add $0.50", "price": "$8.75" },
+        { "name": "Affogato", "desc": "Vanilla gelato steeped in espresso", "price": "$7.95" },
+        { "name": "Cakes", "desc": "Carrot cake, chocolate cake, or toasted almond cake", "price": "$8.85" }
+      ]
+    },
+    {
+      "id": "coffee",
+      "title": "Coffee, Tea & More",
+      "items": [
+        { "name": "Coffee", "desc": "12 oz · 16 oz · 20 oz", "price": "$3 / $3.50 / $4.50" },
+        { "name": "Brewed Teas", "desc": "12 oz · 16 oz · 20 oz", "price": "$2.70 / $2.80 / $2.90" },
+        { "name": "Chai Tea", "desc": "12 oz · 16 oz · 20 oz", "price": "$2.70 / $2.80 / $2.90" },
+        { "name": "Hot Chocolate", "desc": "Small · Medium · Large", "price": "$3.95 / $4.45 / $5.45" },
+        { "name": "Frozen Hot Chocolate", "desc": "16 oz · 20 oz", "price": "$7 / $7.50" },
+        { "name": "Assorted Juices & Drinks", "desc": "Various juices and sizes", "price": "$3.75–$6.95" },
+        { "name": "Soda", "desc": "Pepsi & Diet Pepsi $2.85 · Flavored Seltzers $3.30 · Boylans $3.25", "price": "from $2.85" }
+      ]
+    },
+    {
+      "id": "wine",
+      "title": "Wine & Beer",
+      "items": [
+        { "name": "Assorted Wines", "desc": "By the glass", "price": "$13.45–$13.95" },
+        { "name": "Assorted Beers", "desc": "Selection varies", "price": "$6.45–$7.45" },
+        { "name": "Sangria", "desc": "Glass / Pitcher", "price": "$8.90 / $33" },
+        { "name": "Mimosas", "desc": "Fresh-squeezed orange juice & sparkling wine", "price": "$8.75" }
+      ]
+    },
+    {
+      "id": "espresso",
+      "title": "Track Side Espresso Bar",
+      "note": "Extra shots +$1.25",
+      "items": [
+        { "name": "Espresso", "desc": "Single shot / Double shot", "price": "$2.40 / $3.10" },
+        { "name": "Café au Lait", "desc": "12 oz · 16 oz · 20 oz", "price": "$3.35 / $3.85 / $4.85" },
+        { "name": "Cappuccino", "desc": "Small 12 oz · Medium 16 oz · Large 20 oz", "price": "$4.75 / $5.25 / $6.25" },
+        { "name": "Latte", "desc": "12 oz · 16 oz · 20 oz", "price": "$5.75 / $6.50 / $7.50" },
+        { "name": "Chai Latte", "desc": "Small · Medium · Large", "price": "$4.90 / $5.40 / $6.40" },
+        { "name": "Café Mocha", "desc": "Small · Medium · Large", "price": "$6 / $6.25 / $7.25" },
+        { "name": "Caramel Latte", "desc": "12 oz · 16 oz · 20 oz", "price": "$5.75 / $6.50 / $7.50" },
+        { "name": "Frappé", "desc": "16 oz · 20 oz", "price": "$7 / $7.50" }
+      ]
+    }
+  ]
+}

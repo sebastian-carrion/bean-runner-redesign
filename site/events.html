@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music &amp; Events — BeanRunner Cafe, Peekskill NY</title>
+<meta name="description" content="Live music every Friday and Saturday at BeanRunner Cafe in Peekskill, NY — jazz, salsa, reggae, R&B, and singer-songwriters. See this week's upcoming shows.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/events.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Music & Events — BeanRunner Cafe">
+<meta property="og:description" content="Live jazz and music every Friday and Saturday in Peekskill, NY.">
+<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/cafe_people.jpg">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
+    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <span>
+      <span class="nav-logo-text">BeanRunner</span>
+      <span class="nav-logo-sub">Café · Peekskill, NY</span>
+    </span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="events.html" aria-current="page">Music &amp; Events</a></li>
+    <li><a href="gallery.html">Art Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <header class="page-hero" style="background-image:url('assets/images/cafe_people.jpg');">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">Live at BeanRunner</p>
+      <h1 class="page-hero-title">Music &amp; <em>Events</em></h1>
+      <p class="page-hero-sub">One of Westchester County's premier jazz and live music venues — every Friday and Saturday night, in an intimate landmarked room with excellent sound.</p>
+    </div>
+  </header>
+
+  <!-- WEEKLY SCHEDULE -->
+  <section class="section-pad bg-roast" aria-labelledby="weekly-title">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">Every Week</p>
+        <h2 class="section-title" id="weekly-title">The Weekly Lineup</h2>
+      </div>
+    </div>
+    <div class="weekly-schedule">
+      <div class="schedule-row">
+        <div class="schedule-day">Friday</div>
+        <div class="schedule-info">
+          <div class="schedule-genre">Salsa, Reggae, R&amp;B &amp; Singer / Songwriters</div>
+          <div class="schedule-time">Doors 6:30pm · Show 7:00pm</div>
+        </div>
+        <a href="tel:+19147371701" class="schedule-btn">Reserve Fri</a>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-day">Saturday</div>
+        <div class="schedule-info">
+          <div class="schedule-genre">Live Jazz — The Best in Westchester</div>
+          <div class="schedule-time">Doors 5:30pm · Show 6:00pm</div>
+        </div>
+        <a href="tel:+19147371701" class="schedule-btn">Reserve Sat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING (dynamic from CMS) -->
+  <section class="section-pad bg-ink" aria-labelledby="upcoming-title">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">On the Calendar</p>
+        <h2 class="section-title" id="upcoming-title">Upcoming Shows</h2>
+      </div>
+      <a href="tel:+19147371701" class="section-more">Reserve by Phone →</a>
+    </div>
+    <div class="events-list" id="events-list" aria-live="polite">
+      <p class="events-empty">Loading upcoming shows…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+        <span>
+          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-sub">Café · Peekskill, NY</span>
+        </span>
+      </a>
+      <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
+        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="gallery.html">Art Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Visit</div>
+      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
+      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
+      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Hours</div>
+      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
+      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
+      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
+    <div class="footer-copy">Good food · Fine wine · Great music</div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/collections.js" defer></script>
+</body>
+</html>

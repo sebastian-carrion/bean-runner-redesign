@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeanRunner Cafe — Review Section Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso: #1C0F0A;
+  --roast:    #2C1A10;
+  --amber:    #C8963E;
+  --gold:     #E8B860;
+  --cream:    #F5EFE0;
+  --parchment:#EDE5D0;
+  --ash:      #5A5248;
+  --smoke:    #9A8F82;
+  --white:    #FAF7F2;
+  --ink:      #1A1614;
+  --serif:    'Playfair Display', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --mono:     'DM Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #f0ebe0;
+  font-family: var(--sans);
+  color: var(--ink);
+}
+
+/* ── SELECTOR BAR ─────────────────────────────────────── */
+.selector-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--espresso);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.selector-bar span {
+  color: var(--smoke);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+.sel-btn {
+  background: transparent;
+  border: 1px solid rgba(200,150,62,.3);
+  color: var(--smoke);
+  font-family: var(--sans);
+  font-size: 13px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.sel-btn:hover { border-color: var(--amber); color: var(--amber); }
+.sel-btn.active {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--espresso);
+  font-weight: 600;
+}
+.variant-section { display: none; }
+.variant-section.visible { display: block; }
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT A — CINEMATIC CAROUSEL
+   Dark, moody, full-width cards that cycle with fade+slide
+═══════════════════════════════════════════════════════ */
+#varA {
+  background: var(--espresso);
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+.va-header {
+  text-align: center;
+  margin-bottom: 56px;
+  padding: 0 24px;
+}
+.va-eyebrow {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+.va-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+}
+.va-title em { color: var(--gold); font-style: italic; }
+
+.va-track-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.va-track {
+  position: relative;
+  height: 340px;
+}
+.va-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(44,26,16,.95) 0%, rgba(28,15,10,.98) 100%);
+  border: 1px solid rgba(200,150,62,.15);
+  border-radius: 4px;
+  padding: 44px 52px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .5s ease, transform .5s ease;
+  pointer-events: none;
+}
+.va-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+.va-quote-mark {
+  font-family: var(--serif);
+  font-size: 80px;
+  line-height: .6;
+  color: var(--amber);
+  opacity: .35;
+  margin-bottom: 20px;
+  display: block;
+}
+.va-text {
+  font-family: var(--serif);
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.65;
+  flex: 1;
+}
+.va-meta {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.va-meta-left { display: flex; flex-direction: column; gap: 4px; }
+.va-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.va-source {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--smoke);
+  letter-spacing: .1em;
+}
+.va-stars { display: flex; gap: 3px; }
+.va-star { color: var(--amber); font-size: 14px; }
+
+.va-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+.va-arrow {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(200,150,62,.3);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--amber);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.va-arrow:hover { background: var(--amber); color: var(--espresso); }
+.va-dots {
+  display: flex; gap: 8px;
+}
+.va-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(200,150,62,.25);
+  cursor: pointer;
+  transition: all .25s;
+}
+.va-dot.active {
+  background: var(--amber);
+  width: 20px;
+  border-radius: 3px;
+}
+
+.va-strip {
+  max-width: 900px;
+  margin: 44px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,150,62,.1);
+  border: 1px solid rgba(200,150,62,.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.va-stat {
+  padding: 22px 28px;
+  text-align: center;
+  background: rgba(28,15,10,.6);
+}
+.va-stat-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 4px;
+}
+.va-stat-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT B — MASONRY MOSAIC GRID
+   Cream background, varied card heights, Google-badge feel
+═══════════════════════════════════════════════════════ */
+#varB {
+  background: var(--cream);
+  padding: 80px 0 100px;
+}
+.vb-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.vb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.vb-left {}
+.vb-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+  display: block;
+}
+.vb-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--espresso);
+  line-height: 1.15;
+}
+.vb-title em { font-style: italic; color: var(--amber); }
+.vb-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.vb-score-num {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1;
+}
+.vb-score-stars { display: flex; gap: 4px; }
+.vb-score-star { color: var(--amber); font-size: 18px; }
+.vb-score-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.vb-grid {
+  columns: 3;
+  column-gap: 20px;
+}
+@media (max-width: 900px) { .vb-grid { columns: 2; } }
+@media (max-width: 560px) { .vb-grid { columns: 1; } }
+
+.vb-card {
+  break-inside: avoid;
+  background: var(--white);
+  border-radius: 3px;
+  padding: 28px 28px 24px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid transparent;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+}
+.vb-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.vb-card:hover {
+  border-bottom-color: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(28,15,10,.1);
+}
+.vb-card:hover::before { opacity: 1; }
+
+.vb-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.vb-reviewer { display: flex; align-items: center; gap: 12px; }
+.vb-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--espresso);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.vb-rev-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--espresso);
+  display: block;
+}
+.vb-rev-date {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--smoke);
+  letter-spacing: .05em;
+}
+.vb-card-stars { display: flex; gap: 2px; margin-top: 2px; }
+.vb-cstar { color: var(--amber); font-size: 12px; }
+.vb-card-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.vb-card-text {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ash);
+}
+.vb-card-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  border: 1px solid var(--parchment);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+/* Feature card */
+.vb-card.featured {
+  background: var(--espresso);
+  border-bottom-color: var(--amber);
+}
+.vb-card.featured .vb-rev-name { color: var(--gold); }
+.vb-card.featured .vb-card-title { color: var(--white); }
+.vb-card.featured .vb-card-text { color: rgba(245,239,224,.7); }
+.vb-card.featured .vb-card-tag { color: var(--smoke); border-color: rgba(90,82,72,.4); }
+.vb-card.featured .vb-avatar {
+  background: rgba(200,150,62,.2);
+  color: var(--gold);
+  border: 1px solid rgba(200,150,62,.3);
+}
+
+.vb-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+.vb-cta-btn {
+  display: inline-block;
+  background: transparent;
+  border: 1.5px solid var(--espresso);
+  color: var(--espresso);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.vb-cta-btn:hover {
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   VARIANT C — EDITORIAL PULL-QUOTE
+   Asymmetric layout, magazine feel, one hero + ticker strip
+═══════════════════════════════════════════════════════ */
+#varC {
+  background: var(--parchment);
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+.vc-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.vc-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.vc-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+@media (max-width: 780px) { .vc-split { grid-template-columns: 1fr; } }
+
+.vc-hero-quote {
+  position: relative;
+}
+.vc-giant-q {
+  font-family: var(--serif);
+  font-size: 160px;
+  line-height: .7;
+  color: var(--amber);
+  opacity: .18;
+  position: absolute;
+  top: -20px;
+  left: -12px;
+  pointer-events: none;
+  user-select: none;
+}
+.vc-hero-text {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-style: italic;
+  color: var(--espresso);
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+  padding-top: 16px;
+}
+.vc-hero-text strong {
+  font-style: normal;
+  color: var(--amber);
+  font-weight: 700;
+}
+.vc-hero-meta {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.vc-hero-line {
+  width: 40px;
+  height: 2px;
+  background: var(--amber);
+}
+.vc-hero-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--espresso);
+  letter-spacing: .04em;
+}
+.vc-hero-src {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--smoke);
+  letter-spacing: .1em;
+}
+.vc-hero-stars { display: flex; gap: 3px; margin-top: 6px; }
+.vc-hstar { color: var(--amber); font-size: 13px; }
+
+/* Stack of mini quotes on right */
+.vc-stack { display: flex; flex-direction: column; gap: 20px; }
+.vc-mini {
+  background: var(--white);
+  border-left: 3px solid var(--amber);
+  padding: 18px 20px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: border-left-color .2s, background .2s;
+}
+.vc-mini:hover { background: var(--cream); }
+.vc-mini-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ash);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.vc-mini-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vc-mini-name {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--espresso);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.vc-mini-stars { display: flex; gap: 2px; }
+.vc-mstar { color: var(--amber); font-size: 10px; }
+
+/* Ticker strip */
+.vc-ticker-wrap {
+  border-top: 1px solid rgba(28,15,10,.12);
+  border-bottom: 1px solid rgba(28,15,10,.12);
+  overflow: hidden;
+  padding: 18px 0;
+  margin: 0 -32px;
+  background: var(--espresso);
+}
+.vc-ticker {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.vc-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 40px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.vc-ticker-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--cream);
+  opacity: .75;
+}
+.vc-ticker-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+/* Score section */
+.vc-bottom {
+  margin-top: 56px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.vc-big-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.vc-score-ring {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  background: var(--white);
+}
+.vc-score-n {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1;
+}
+.vc-score-d {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--smoke);
+}
+.vc-score-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  text-align: center;
+  margin-top: 6px;
+}
+.vc-bars { flex: 1; min-width: 240px; }
+.vc-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.vc-bar-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--smoke);
+  width: 54px;
+  text-align: right;
+  letter-spacing: .05em;
+}
+.vc-bar-track {
+  flex: 1;
+  height: 5px;
+  background: var(--parchment);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.vc-bar-fill {
+  height: 100%;
+  background: var(--amber);
+  border-radius: 3px;
+  transition: width .8s ease;
+}
+.vc-bar-pct {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ash);
+  width: 28px;
+}
+.vc-reviews-lbl {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ash);
+}
+.vc-reviews-lbl strong {
+  font-weight: 700;
+  color: var(--espresso);
+}
+
+</style>
+</head>
+<body>
+
+<!-- SELECTOR BAR -->
+<div class="selector-bar">
+  <span>Mockup →</span>
+  <button class="sel-btn active" onclick="showVariant('A', this)">A — Cinematic Carousel</button>
+  <button class="sel-btn" onclick="showVariant('B', this)">B — Masonry Grid</button>
+  <button class="sel-btn" onclick="showVariant('C', this)">C — Editorial Pull-Quote</button>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     VARIANT A — CINEMATIC CAROUSEL
+══════════════════════════════════════════ -->
+<section id="varA" class="variant-section visible">
+  <div class="va-header">
+    <div class="va-eyebrow">What Guests Are Saying</div>
+    <h2 class="va-title">Stories From <em>The Bean</em></h2>
+  </div>
+  <div class="va-track-wrap">
+    <div class="va-track" id="vaTrack">
+
+      <div class="va-card active" data-idx="0">
+        <span class="va-quote-mark">&ldquo;</span>
+        <p class="va-text">In the heart of Peekskill's art core, The BeanRunner Cafe is a gathering place for all culture vultures who love great breakfasts, lunches, desserts, wine and more, with a touch of Caribbean flair. The owners are friendly, the staff is attentive, and the vibe is always welcoming.</p>
+        <div class="va-meta">
+          <div class="va-meta-left">
+            <span class="va-name">ChanteuseSimone</span>
+            <span class="va-source">TripAdvisor · Aug 2011</span>
+          </div>
+          <div class="va-stars">
+            <span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="va-card" data-idx="1">
+        <span class="va-quote-mark">&ldquo;</span>
+        <p class="va-text">Bean Runner is a wonderful addition to the Hudson Valley music scene. It's a small, cozy room with excellent sound. The musicians are the main attraction — they range from good to fabulous.</p>
+        <div class="va-meta">
+          <div class="va-meta-left">
+            <span class="va-name">Larry K</span>
+            <span class="va-source">TripAdvisor · Mar 2017</span>
+          </div>
+          <div class="va-stars">
+            <span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="va-card" data-idx="2">
+        <span class="va-quote-mark">&ldquo;</span>
+        <p class="va-text">Super tasty, comfortable, casual place for a weekend lunch! Everything looked good, and I really loved the coconut-curry chickpeas. It looks like they have live music sometimes too, and I can see that would be fun.</p>
+        <div class="va-meta">
+          <div class="va-meta-left">
+            <span class="va-name">Bonnie M</span>
+            <span class="va-source">TripAdvisor · Aug 2024</span>
+          </div>
+          <div class="va-stars">
+            <span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="va-card" data-idx="3">
+        <span class="va-quote-mark">&ldquo;</span>
+        <p class="va-text">Loved this place! Coffee was robust and fresh. Pastry and service excellent. A great place to chill with a great cup of Java — relaxed atmosphere and helpful staff. Upscale village feel!</p>
+        <div class="va-meta">
+          <div class="va-meta-left">
+            <span class="va-name">Antonia S</span>
+            <span class="va-source">TripAdvisor · Apr 2018</span>
+          </div>
+          <div class="va-stars">
+            <span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="va-card" data-idx="4">
+        <span class="va-quote-mark">&ldquo;</span>
+        <p class="va-text">Cozy coffee house with excellent soups, sandwiches, cakes and friendly servers. Relaxed on a comfy couch — far better than any Starbucks, including the taste of the coffee.</p>
+        <div class="va-meta">
+          <div class="va-meta-left">
+            <span class="va-name">FredLawrence_NC</span>
+            <span class="va-source">TripAdvisor · Oct 2017</span>
+          </div>
+          <div class="va-stars">
+            <span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span><span class="va-star">★</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /va-track -->
+
+    <div class="va-nav">
+      <button class="va-arrow" onclick="vaPrev()">&#8592;</button>
+      <div class="va-dots" id="vaDots">
+        <div class="va-dot active" onclick="vaGo(0)"></div>
+        <div class="va-dot" onclick="vaGo(1)"></div>
+        <div class="va-dot" onclick="vaGo(2)"></div>
+        <div class="va-dot" onclick="vaGo(3)"></div>
+        <div class="va-dot" onclick="vaGo(4)"></div>
+      </div>
+      <button class="va-arrow" onclick="vaNext()">&#8594;</button>
+    </div>
+  </div><!-- /va-track-wrap -->
+
+  <div class="va-strip">
+    <div class="va-stat">
+      <span class="va-stat-num">4.3</span>
+      <span class="va-stat-lbl">TripAdvisor Score</span>
+    </div>
+    <div class="va-stat">
+      <span class="va-stat-num">46</span>
+      <span class="va-stat-lbl">Reviews</span>
+    </div>
+    <div class="va-stat">
+      <span class="va-stat-num">#17</span>
+      <span class="va-stat-lbl">in Peekskill</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     VARIANT B — MASONRY GRID
+══════════════════════════════════════════ -->
+<section id="varB" class="variant-section">
+  <div class="vb-inner">
+    <div class="vb-header">
+      <div class="vb-left">
+        <span class="vb-eyebrow">Guest Reviews</span>
+        <h2 class="vb-title">What People<br>Are <em>Loving</em></h2>
+      </div>
+      <div class="vb-score">
+        <span class="vb-score-num">4.3</span>
+        <div class="vb-score-stars">
+          <span class="vb-score-star">★</span><span class="vb-score-star">★</span><span class="vb-score-star">★</span><span class="vb-score-star">★</span><span class="vb-score-star" style="opacity:.4">★</span>
+        </div>
+        <span class="vb-score-lbl">46 reviews · TripAdvisor</span>
+      </div>
+    </div>
+
+    <div class="vb-grid">
+
+      <div class="vb-card featured">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">C</div>
+            <div>
+              <span class="vb-rev-name">ChanteuseSimone</span>
+              <span class="vb-rev-date" style="color:var(--smoke)">Aug 2011</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title" style="color:var(--gold)">Artsy cafe with live music, theatre & gallery</div>
+        <p class="vb-card-text" style="color:rgba(245,239,224,.72)">In the heart of Peekskill's art core, BeanRunner is a gathering place for all culture vultures. The owners are friendly, the staff is attentive, and the vibe is always welcoming.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">B</div>
+            <div>
+              <span class="vb-rev-name">Bonnie M</span>
+              <span class="vb-rev-date">Aug 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">Nice lunch spot</div>
+        <p class="vb-card-text">Super tasty, comfortable, casual place for a weekend lunch! Everything looked good — I really loved the coconut-curry chickpeas.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">J</div>
+            <div>
+              <span class="vb-rev-name">Jennella Y</span>
+              <span class="vb-rev-date">Sep 2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">My favorite place in Peekskill</div>
+        <p class="vb-card-text">As an artist, BeanRunner has a great inspirational vibe. Low-key but with a good variety of food and drinks. I ate here for breakfast and lunch several times.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">L</div>
+            <div>
+              <span class="vb-rev-name">Larry K</span>
+              <span class="vb-rev-date">Mar 2017</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">Wonderful addition to the Hudson Valley music scene</div>
+        <p class="vb-card-text">I've been there frequently on weekend evenings for wonderful, mostly NY area musicians. It's a small, cozy room with excellent sound. The musicians range from good to fabulous.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">A</div>
+            <div>
+              <span class="vb-rev-name">Antonia S</span>
+              <span class="vb-rev-date">Apr 2018</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">Upscale Village Feel!</div>
+        <p class="vb-card-text">Loved this place! Coffee was robust and fresh. Pastry and service excellent. Relaxed atmosphere and helpful staff.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">F</div>
+            <div>
+              <span class="vb-rev-name">FredLawrence_NC</span>
+              <span class="vb-rev-date">Oct 2017</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">Comfy sofa and coffee</div>
+        <p class="vb-card-text">Cozy coffee house with excellent soups, sandwiches, cakes and friendly servers. Far better than any Starbucks — including the taste of the coffee.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">R</div>
+            <div>
+              <span class="vb-rev-name">RobbieV23</span>
+              <span class="vb-rev-date">Jun 2016</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span>
+        </div>
+        <div class="vb-card-title">Great Sandwiches &amp; Smoothies!</div>
+        <p class="vb-card-text">I've been coming here for about two years and their sandwiches &amp; smoothies are the best. Also really convenient for calling ahead and picking up a quick lunch.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+      <div class="vb-card">
+        <div class="vb-card-top">
+          <div class="vb-reviewer">
+            <div class="vb-avatar">65</div>
+            <div>
+              <span class="vb-rev-name">65Pony</span>
+              <span class="vb-rev-date">Dec 2010</span>
+            </div>
+          </div>
+        </div>
+        <div class="vb-card-stars" style="margin-bottom:10px">
+          <span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar">★</span><span class="vb-cstar" style="opacity:.3">★</span>
+        </div>
+        <div class="vb-card-title">The local coffee house</div>
+        <p class="vb-card-text">The atmosphere is kinda beatnik, but really quite comforting. The courtyard out back is really very pleasant. Extremely reasonable for food, drinks AND entertainment.</p>
+        <span class="vb-card-tag">TripAdvisor</span>
+      </div>
+
+    </div><!-- /vb-grid -->
+
+    <div class="vb-cta">
+      <a class="vb-cta-btn" href="https://www.tripadvisor.com/Restaurant_Review-g48374-d2302919-Reviews-Bean_Runner_Cafe-Peekskill_New_York.html" target="_blank">Read All 46 Reviews on TripAdvisor</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     VARIANT C — EDITORIAL PULL-QUOTE
+══════════════════════════════════════════ -->
+<section id="varC" class="variant-section">
+  <div class="vc-inner">
+    <span class="vc-eyebrow">Guest Reviews &amp; Praise</span>
+
+    <div class="vc-split">
+      <!-- Hero quote left -->
+      <div class="vc-hero-quote">
+        <span class="vc-giant-q">&ldquo;</span>
+        <p class="vc-hero-text">
+          In the heart of Peekskill's art core, BeanRunner is a gathering place for all culture vultures. The owners are friendly, the staff is attentive, and the vibe is <strong>always welcoming.</strong>
+        </p>
+        <div class="vc-hero-meta">
+          <div class="vc-hero-line"></div>
+          <div>
+            <div class="vc-hero-name">ChanteuseSimone</div>
+            <div class="vc-hero-src">TripAdvisor · August 2011</div>
+          </div>
+        </div>
+        <div class="vc-hero-stars">
+          <span class="vc-hstar">★</span><span class="vc-hstar">★</span><span class="vc-hstar">★</span><span class="vc-hstar">★</span><span class="vc-hstar">★</span>
+        </div>
+      </div>
+
+      <!-- Mini quotes right -->
+      <div class="vc-stack">
+
+        <div class="vc-mini">
+          <p class="vc-mini-text">"Super tasty, comfortable, casual place for a weekend lunch! I really loved the coconut-curry chickpeas."</p>
+          <div class="vc-mini-meta">
+            <span class="vc-mini-name">Bonnie M · 2024</span>
+            <div class="vc-mini-stars">
+              <span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vc-mini">
+          <p class="vc-mini-text">"As an artist, it has a great inspirational vibe. Low-key but with a good variety of food and drinks."</p>
+          <div class="vc-mini-meta">
+            <span class="vc-mini-name">Jennella Y · 2020</span>
+            <div class="vc-mini-stars">
+              <span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vc-mini">
+          <p class="vc-mini-text">"The musicians range from good to fabulous. It's a small, cozy room with excellent sound."</p>
+          <div class="vc-mini-meta">
+            <span class="vc-mini-name">Larry K · 2017</span>
+            <div class="vc-mini-stars">
+              <span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vc-mini">
+          <p class="vc-mini-text">"Coffee was robust and fresh. Pastry and service excellent. Relaxed atmosphere and helpful staff!"</p>
+          <div class="vc-mini-meta">
+            <span class="vc-mini-name">Antonia S · 2018</span>
+            <div class="vc-mini-stars">
+              <span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span><span class="vc-mstar">★</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /vc-split -->
+  </div>
+
+  <!-- Ticker -->
+  <div class="vc-ticker-wrap">
+    <div class="vc-ticker">
+      <!-- duplicate for seamless loop -->
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Far better than any Starbucks, including the taste of the coffee."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Great atmosphere. Menu offers light fare with a bit of a twist."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"I've been coming here for two years — sandwiches & smoothies are the best."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Extremely reasonable for food, drinks AND entertainment."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Quality music. Oh yeah, the food and drink are terrific."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"$15 cover is very reasonable and the band was great."</span><div class="vc-ticker-dot"></div></div>
+      <!-- repeat -->
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Far better than any Starbucks, including the taste of the coffee."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Great atmosphere. Menu offers light fare with a bit of a twist."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"I've been coming here for two years — sandwiches & smoothies are the best."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Extremely reasonable for food, drinks AND entertainment."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"Quality music. Oh yeah, the food and drink are terrific."</span><div class="vc-ticker-dot"></div></div>
+      <div class="vc-ticker-item"><span class="vc-ticker-quote">"$15 cover is very reasonable and the band was great."</span><div class="vc-ticker-dot"></div></div>
+    </div>
+  </div>
+
+  <div class="vc-inner">
+    <div class="vc-bottom">
+      <div class="vc-big-score">
+        <div class="vc-score-ring">
+          <span class="vc-score-n">4.3</span>
+          <span class="vc-score-d">/ 5</span>
+        </div>
+        <div class="vc-score-lbl">TripAdvisor<br>Score</div>
+      </div>
+      <div class="vc-bars">
+        <div class="vc-bar-row">
+          <span class="vc-bar-lbl">Excellent</span>
+          <div class="vc-bar-track"><div class="vc-bar-fill" style="width:43%"></div></div>
+          <span class="vc-bar-pct">43%</span>
+        </div>
+        <div class="vc-bar-row">
+          <span class="vc-bar-lbl">Very Good</span>
+          <div class="vc-bar-track"><div class="vc-bar-fill" style="width:26%"></div></div>
+          <span class="vc-bar-pct">26%</span>
+        </div>
+        <div class="vc-bar-row">
+          <span class="vc-bar-lbl">Average</span>
+          <div class="vc-bar-track"><div class="vc-bar-fill" style="width:15%"></div></div>
+          <span class="vc-bar-pct">15%</span>
+        </div>
+        <div class="vc-bar-row">
+          <span class="vc-bar-lbl">Poor</span>
+          <div class="vc-bar-track"><div class="vc-bar-fill" style="width:9%"></div></div>
+          <span class="vc-bar-pct">9%</span>
+        </div>
+        <div class="vc-bar-row">
+          <span class="vc-bar-lbl">Terrible</span>
+          <div class="vc-bar-track"><div class="vc-bar-fill" style="width:7%"></div></div>
+          <span class="vc-bar-pct">7%</span>
+        </div>
+      </div>
+      <div>
+        <p class="vc-reviews-lbl"><strong>46 reviews</strong> on TripAdvisor</p>
+        <p class="vc-reviews-lbl" style="margin-top:4px">Ranked <strong>#17</strong> of 87 restaurants in Peekskill</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+// ── Variant selector
+function showVariant(v, btn) {
+  document.querySelectorAll('.variant-section').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.sel-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('var' + v).classList.add('visible');
+  btn.classList.add('active');
+}
+
+// ── Variant A carousel
+let vaCurrent = 0;
+const vaCards = document.querySelectorAll('.va-card');
+const vaDots  = document.querySelectorAll('.va-dot');
+
+function vaGo(idx) {
+  vaCards[vaCurrent].classList.remove('active');
+  vaDots[vaCurrent].classList.remove('active');
+  vaCurrent = (idx + vaCards.length) % vaCards.length;
+  vaCards[vaCurrent].classList.add('active');
+  vaDots[vaCurrent].classList.add('active');
+}
+function vaNext() { vaGo(vaCurrent + 1); }
+function vaPrev() { vaGo(vaCurrent - 1); }
+
+// auto-advance every 5s
+setInterval(vaNext, 5000);
+</script>
+</body>
+</html>

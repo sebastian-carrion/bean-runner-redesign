@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — BeanRunner Cafe</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .nf-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--espresso);
+    padding: 40px 24px;
+  }
+  .nf-wrap img { width: 88px; height: 88px; border-radius: 50%; margin-bottom: 28px; }
+  .nf-code { font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+  .nf-title { font-family: var(--serif); font-size: clamp(32px, 6vw, 56px); font-weight: 900; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
+  .nf-title em { font-style: italic; color: var(--gold); }
+  .nf-sub { font-size: 15px; color: var(--smoke); max-width: 420px; line-height: 1.7; margin-bottom: 36px; }
+</style>
+</head>
+<body>
+  <div class="nf-wrap">
+    <img src="assets/images/logo.png" alt="BeanRunner Cafe">
+    <p class="nf-code">Error 404</p>
+    <h1 class="nf-title">This page <em>ran off</em></h1>
+    <p class="nf-sub">We couldn't find what you were looking for — but there's always a fresh cup waiting back home.</p>
+    <a href="index.html" class="btn-primary">Back to Home</a>
+  </div>
+</body>
+</html>
