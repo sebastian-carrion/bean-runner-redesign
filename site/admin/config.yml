@@ -20,13 +20,17 @@ public_folder: "/assets/images/uploads"
 
 site_url: https://www.beanrunnercafe.com
 display_url: https://www.beanrunnercafe.com
-logo_url: https://www.beanrunnercafe.com/assets/images/logo.png
+
+# BeanRunner logo in the editor header
+logo:
+  src: /assets/images/logo.png
+  show_in_header: true
 
 collections:
   # ── EVENTS ───────────────────────────────────────────────────
   - name: events
     label: "Music & Events"
-    description: "Upcoming live-music shows that appear on the Events page."
+    description: "Upcoming live-music shows that appear on the Events page and homepage."
     files:
       - name: events
         label: "Upcoming Shows"
@@ -36,14 +40,22 @@ collections:
             label: "Shows"
             label_singular: "Show"
             widget: list
-            summary: "{{fields.day}} {{fields.month}} — {{fields.name}}"
+            collapsed: true          # show a tidy summary list, not every field expanded
+            summary: "{{fields.date | date('ddd, MMM D')}} — {{fields.name}}"
             fields:
-              - { name: day, label: "Day (number)", widget: string, hint: "e.g. 14" }
-              - { name: month, label: "Month & year", widget: string, hint: "e.g. June 2026" }
-              - { name: type, label: "Genre / type", widget: string, hint: "e.g. Jazz Night" }
-              - { name: name, label: "Performer / show name", widget: string }
-              - { name: detail, label: "Description", widget: text }
-              - { name: time, label: "Day & times", widget: string, hint: "e.g. Sat · Doors 5:30pm · Show 6:00pm" }
+              - { name: type, label: "Genre / type", widget: string, default: "Jazz Night", hint: "e.g. Jazz Night · Salsa · Singer / Songwriter" }
+              - { name: name, label: "Performer / show name", widget: string, hint: "The headline act" }
+              - { name: detail, label: "Description", widget: text, hint: "One or two sentences" }
+              - name: date
+                label: "Show date"
+                widget: datetime
+                format: "YYYY-MM-DD"
+                date_format: "ddd, MMM D, YYYY"
+                time_format: false       # date only — pick from the calendar
+                picker_utc: false
+                hint: "Pick from the calendar. The day number, month and weekday are filled in automatically."
+              - { name: doors, label: "Doors open", widget: datetime, date_format: false, time_format: "h:mm A", format: "HH:mm", default: "18:30", hint: "Fridays usually 6:30pm, Saturdays 5:30pm" }
+              - { name: show, label: "Showtime", widget: datetime, date_format: false, time_format: "h:mm A", format: "HH:mm", default: "19:00", hint: "Fridays usually 7:00pm, Saturdays 6:00pm" }
 
   # ── EXHIBITS ─────────────────────────────────────────────────
   - name: exhibits
@@ -58,12 +70,13 @@ collections:
             label: "Exhibits"
             label_singular: "Exhibit"
             widget: list
+            collapsed: true
             summary: "{{fields.title}} — {{fields.artist}}"
             fields:
               - { name: title, label: "Exhibit title", widget: string }
               - { name: artist, label: "Artist", widget: string }
-              - { name: dates, label: "Dates / medium", widget: string, required: false }
-              - { name: status, label: "Status label", widget: string, hint: "e.g. Now Showing", required: false }
+              - { name: dates, label: "Dates / medium", widget: string, required: false, hint: "e.g. June – July 2026, or 'Mixed media'" }
+              - { name: status, label: "Status label", widget: string, required: false, default: "Now Showing", hint: "e.g. Now Showing · Featured" }
               - { name: image, label: "Photo", widget: image, hint: "Square works best." }
 
   # ── MENU ─────────────────────────────────────────────────────
@@ -80,6 +93,7 @@ collections:
             label: "Categories"
             label_singular: "Category"
             widget: list
+            collapsed: true
             summary: "{{fields.title}}"
             fields:
               - { name: id, label: "Tab ID (lowercase, no spaces)", widget: string, hint: "e.g. breakfast" }
@@ -89,6 +103,7 @@ collections:
                 label: "Items"
                 label_singular: "Item"
                 widget: list
+                collapsed: true
                 summary: "{{fields.name}} — {{fields.price}}"
                 fields:
                   - { name: name, label: "Item name", widget: string }
@@ -98,6 +113,7 @@ collections:
                     label: "Dietary badge"
                     widget: select
                     required: false
+                    default: ""
                     options:
                       - { label: "None", value: "" }
                       - { label: "Vegan", value: "vegan" }

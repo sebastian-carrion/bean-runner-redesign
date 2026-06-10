@@ -24,6 +24,34 @@
     });
   }
 
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var WEEKDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // "18:30" -> "6:30pm"
+  function fmtTime(hm) {
+    if (!hm) return '';
+    var p = String(hm).split(':');
+    var h = parseInt(p[0], 10), m = parseInt(p[1], 10) || 0;
+    var ap = h >= 12 ? 'pm' : 'am';
+    var h12 = h % 12; if (h12 === 0) h12 = 12;
+    return h12 + ':' + (m < 10 ? '0' + m : m) + ap;
+  }
+
+  // Derive the display bits from an event. Supports the new schema
+  // (date + doors + show) and falls back to the legacy day/month/time fields.
+  function eventParts(e) {
+    if (e.date) {
+      var p = String(e.date).split('-');
+      var dt = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10)); // local, no TZ shift
+      var weekday = WEEKDAYS[dt.getDay()];
+      var time = weekday;
+      if (e.doors) time += ' · Doors ' + fmtTime(e.doors);
+      if (e.show) time += ' · Show ' + fmtTime(e.show);
+      return { day: String(dt.getDate()), month: MONTHS[dt.getMonth()] + ' ' + dt.getFullYear(), time: time };
+    }
+    return { day: e.day, month: e.month, time: e.time }; // legacy
+  }
+
   /* ── EVENTS ────────────────────────────────────────────────── */
   function renderEvents() {
     var list = document.getElementById('events-list');
@@ -32,17 +60,18 @@
       var events = (data && data.events) || [];
       if (!events.length) { list.innerHTML = '<p class="events-empty">No upcoming shows posted right now — check back soon.</p>'; return; }
       list.innerHTML = events.map(function (e) {
+        var p = eventParts(e);
         return '' +
           '<article class="event-row">' +
             '<div class="event-row-date">' +
-              '<div class="event-row-day">' + esc(e.day) + '</div>' +
-              '<div class="event-row-month">' + esc(e.month) + '</div>' +
+              '<div class="event-row-day">' + esc(p.day) + '</div>' +
+              '<div class="event-row-month">' + esc(p.month) + '</div>' +
             '</div>' +
             '<div class="event-row-body">' +
               '<div class="event-row-type">' + esc(e.type) + '</div>' +
               '<h3 class="event-row-name">' + esc(e.name) + '</h3>' +
               '<p class="event-row-detail">' + esc(e.detail) + '</p>' +
-              '<div class="event-row-time">' + esc(e.time) + '</div>' +
+              '<div class="event-row-time">' + esc(p.time) + '</div>' +
             '</div>' +
             '<a class="schedule-btn" href="tel:+19147371701">Reserve</a>' +
           '</article>';
@@ -61,14 +90,15 @@
       var events = ((data && data.events) || []).slice(0, 3);
       if (!events.length) { grid.innerHTML = '<p class="event-detail">No upcoming shows posted — check back soon.</p>'; return; }
       grid.innerHTML = events.map(function (e) {
+        var p = eventParts(e);
         return '' +
           '<article class="event-card">' +
             '<div class="event-type">' + esc(e.type) + '</div>' +
-            '<div class="event-day">' + esc(e.day) + '</div>' +
-            '<div class="event-month">' + esc(e.month) + '</div>' +
+            '<div class="event-day">' + esc(p.day) + '</div>' +
+            '<div class="event-month">' + esc(p.month) + '</div>' +
             '<h3 class="event-name">' + esc(e.name) + '</h3>' +
             '<p class="event-detail">' + esc(e.detail) + '</p>' +
-            '<div class="event-time">' + esc(e.time) + '</div>' +
+            '<div class="event-time">' + esc(p.time) + '</div>' +
           '</article>';
       }).join('');
     }).catch(function (err) {

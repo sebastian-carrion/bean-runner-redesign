@@ -1,52 +1,52 @@
 {
   "events": [
     {
-      "day": "12",
-      "month": "June 2026",
       "type": "Salsa · Reggae · R&B",
       "name": "Ritmo Caliente",
       "detail": "High-energy Latin rhythms — salsa, reggae, and R&B to get the room moving.",
-      "time": "Fri · Doors 6:30pm · Show 7:00pm"
+      "date": "2026-06-12",
+      "doors": "18:30",
+      "show": "19:00"
     },
     {
-      "day": "13",
-      "month": "June 2026",
       "type": "Jazz Night",
       "name": "Marcus Bellamy Quartet",
       "detail": "Award-winning pianist and his quartet performing classic & contemporary jazz standards.",
-      "time": "Sat · Doors 5:30pm · Show 6:00pm"
+      "date": "2026-06-13",
+      "doors": "17:30",
+      "show": "18:00"
     },
     {
-      "day": "19",
-      "month": "June 2026",
       "type": "Singer / Songwriter",
       "name": "Anya Cole",
       "detail": "Intimate acoustic performance from Brooklyn-based singer-songwriter Anya Cole.",
-      "time": "Fri · Doors 6:30pm · Show 7:00pm"
+      "date": "2026-06-19",
+      "doors": "18:30",
+      "show": "19:00"
     },
     {
-      "day": "20",
-      "month": "June 2026",
       "type": "Jazz Night",
       "name": "The Hudson Valley Trio",
       "detail": "Standards and originals from a beloved local trio — piano, upright bass, and brushed drums.",
-      "time": "Sat · Doors 5:30pm · Show 6:00pm"
+      "date": "2026-06-20",
+      "doors": "17:30",
+      "show": "18:00"
     },
     {
-      "day": "26",
-      "month": "June 2026",
       "type": "Soul · R&B",
       "name": "Deva Mahal & Friends",
       "detail": "Soulful vocals and a tight band bringing R&B, gospel, and blues to the BeanRunner stage.",
-      "time": "Fri · Doors 6:30pm · Show 7:00pm"
+      "date": "2026-06-26",
+      "doors": "18:30",
+      "show": "19:00"
     },
     {
-      "day": "27",
-      "month": "June 2026",
       "type": "Jazz Night",
       "name": "Camille Thurman & the Darrell Green Trio",
       "detail": "Acclaimed saxophonist and vocalist Camille Thurman leads a swinging night of straight-ahead jazz.",
-      "time": "Sat · Doors 5:30pm · Show 6:00pm"
+      "date": "2026-06-27",
+      "doors": "17:30",
+      "show": "18:00"
     }
   ]
 }

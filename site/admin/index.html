@@ -9,5 +9,19 @@
 <body>
 <!-- Sveltia CMS — modern, config-compatible successor to Decap/Netlify CMS -->
 <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+<script>
+  /* Render the preview pane in BeanRunner's real fonts & colors.
+     Polls briefly in case the CMS global isn't ready the instant this runs. */
+  (function () {
+    function brand() {
+      if (!window.CMS || typeof window.CMS.registerPreviewStyle !== 'function') return false;
+      window.CMS.registerPreviewStyle('/admin/preview.css');
+      return true;
+    }
+    if (!brand()) {
+      var n = 0, t = setInterval(function () { if (brand() || ++n > 50) clearInterval(t); }, 100);
+    }
+  })();
+</script>
 </body>
 </html>

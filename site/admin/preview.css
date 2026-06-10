@@ -1,0 +1,59 @@
+/* ════════════════════════════════════════════════════════════════
+   BeanRunner — CMS preview-pane styling
+   Injected into Sveltia's preview iframe via CMS.registerPreviewStyle()
+   so the live preview uses the site's real fonts and colors.
+   ════════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --espresso: #1C0F0A;
+  --roast:    #2C1A10;
+  --amber:    #C8963E;
+  --gold:     #E8B860;
+  --cream:    #F5EFE0;
+  --parchment:#EDE5D0;
+  --ash:      #5A5248;
+  --smoke:    #9A8F82;
+  --white:    #FAF7F2;
+  --ink:      #1A1614;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --mono:  'DM Mono', monospace;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  padding: 28px 32px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--roast);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+h1 { font-size: 38px; font-weight: 900; }
+h2 { font-size: 28px; font-weight: 700; }
+h3 { font-size: 20px; font-weight: 600; }
+em { font-style: italic; color: var(--amber); }
+strong { color: var(--roast); }
+p { color: var(--ash); margin-bottom: 12px; }
+a { color: var(--amber); text-decoration: none; }
+hr { border: none; border-top: 1px solid var(--parchment); margin: 20px 0; }
+img { max-width: 100%; border-radius: 4px; }
+
+/* Eyebrow / label feel for short uppercase bits */
+small, .eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* Prices / times read as mono, like the site */
+code, time { font-family: var(--mono); color: var(--amber); }
