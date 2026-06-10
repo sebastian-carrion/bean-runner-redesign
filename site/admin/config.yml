@@ -1,24 +1,18 @@
 # ════════════════════════════════════════════════════════════════
-# Decap CMS configuration for BeanRunner Cafe
+# Sveltia CMS configuration for BeanRunner Cafe
 #
-# Backend: git-gateway + Netlify Identity (enable both in the Netlify
-# dashboard — see README "Content editing (CMS)"). To use GitHub OAuth
-# instead, replace the backend block with:
-#   backend:
-#     name: github
-#     repo: <owner>/<repo>
-#     branch: main
+# Backend: GitHub. Editors sign in with their GitHub account via
+# Netlify's OAuth provider (set up once in the Netlify dashboard —
+# see README "Content editing (CMS)").
 #
 # Paths are relative to the REPOSITORY ROOT. The publishable site lives
 # in /site, so content files are under "site/content/…".
 # ════════════════════════════════════════════════════════════════
 
 backend:
-  name: git-gateway
+  name: github
+  repo: sebastian-carrion/bean-runner-redesign
   branch: main
-
-# Editors can preview/save drafts before publishing
-publish_mode: editorial_workflow
 
 # Where uploaded images are stored (repo path) and how they're referenced (URL)
 media_folder: "site/assets/images/uploads"

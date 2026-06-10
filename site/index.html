@@ -470,20 +470,5 @@
 <script src="js/main.js" defer></script>
 <script src="js/reviews.js" defer></script>
 <script src="js/collections.js" defer></script>
-
-<!-- Netlify Identity: catches CMS invite/recovery links (which land on the
-     site root with a token in the URL) and sends staff to the editor. -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', function (user) {
-      if (!user) {
-        window.netlifyIdentity.on('login', function () {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
-</script>
 </body>
 </html>

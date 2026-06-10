@@ -48,20 +48,27 @@ will break the dynamic pages — they need to `fetch()` the JSON over HTTP.)
 
 ## Content editing (CMS)
 
-Staff edit events, the menu, and art exhibits through **Decap CMS** at `/admin/`.
-It commits changes straight to the git repo, which redeploys the site.
+Content (events, menu, art exhibits) is edited through **Sveltia CMS** at
+`/admin/`. It commits changes straight to this GitHub repo, which redeploys the
+site. Editors sign in with their **GitHub account** (they must have write access
+to the repo).
 
-One-time setup on Netlify:
+One-time OAuth setup (so the "Sign in with GitHub" button works):
 
-1. Deploy the repo to Netlify (see below).
-2. In the Netlify dashboard: **Site settings → Identity → Enable Identity**.
-3. Under **Identity → Registration**, set to *Invite only*, then invite staff emails.
-4. Under **Identity → Services → Git Gateway**, click **Enable Git Gateway**.
-5. Staff visit `https://<your-site>/admin/`, accept the email invite, and log in.
+1. **Create a GitHub OAuth app** — GitHub → *Settings → Developer settings →
+   OAuth Apps → New OAuth App*:
+   - Application name: `BeanRunner CMS`
+   - Homepage URL: your Netlify site URL (e.g. `https://bean-runner-v1.netlify.app`)
+   - Authorization callback URL: **`https://api.netlify.com/auth/done`**
+   - Register, then copy the **Client ID** and generate a **Client Secret**.
+2. **Register it in Netlify** — *Site configuration → Access control → OAuth →
+   Authentication providers → Install provider → GitHub*, paste the Client ID and
+   Secret.
+3. Go to `https://<your-site>/admin/`, click **Sign in with GitHub**, authorize,
+   and you're in.
 
-Prefer GitHub logins instead of Netlify Identity? Swap the `backend` block in
-`site/admin/config.yml` for the `github` backend (commented example included in
-that file) and register an OAuth app.
+To add another editor, add them as a collaborator on the GitHub repo. Netlify
+Identity / Git Gateway are no longer used and can be disabled.
 
 ## Deployment (Netlify)
 
