@@ -14,6 +14,10 @@ backend:
   repo: sebastian-carrion/bean-runner-redesign
   branch: main
 
+# Only active when the editor is opened on localhost (ignored in production),
+# so the CMS can be tested locally against a proxy without GitHub login.
+local_backend: true
+
 # Where uploaded images are stored (repo path) and how they're referenced (URL)
 media_folder: "site/assets/images/uploads"
 public_folder: "/assets/images/uploads"

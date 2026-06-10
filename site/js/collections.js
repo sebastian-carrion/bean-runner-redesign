@@ -37,6 +37,28 @@
     return h12 + ':' + (m < 10 ? '0' + m : m) + ap;
   }
 
+  // Milliseconds for an event's date (local midnight), or null if undated/legacy.
+  function eventTime(e) {
+    if (!e.date) return null;
+    var p = String(e.date).split('-');
+    return new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10)).getTime();
+  }
+
+  // Drop shows whose date has already passed, then sort the rest soonest-first.
+  // Undated/legacy events (no `date`) are kept and appended after dated ones.
+  function prepareEvents(list) {
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var t = today.getTime();
+    var dated = [], undated = [];
+    (list || []).forEach(function (e) {
+      var v = eventTime(e);
+      if (v === null) undated.push(e);
+      else if (v >= t) dated.push(e);
+    });
+    dated.sort(function (a, b) { return eventTime(a) - eventTime(b); });
+    return dated.concat(undated);
+  }
+
   // Derive the display bits from an event. Supports the new schema
   // (date + doors + show) and falls back to the legacy day/month/time fields.
   function eventParts(e) {
@@ -57,7 +79,7 @@
     var list = document.getElementById('events-list');
     if (!list) return;
     getJSON('content/events.json').then(function (data) {
-      var events = (data && data.events) || [];
+      var events = prepareEvents(data && data.events);
       if (!events.length) { list.innerHTML = '<p class="events-empty">No upcoming shows posted right now — check back soon.</p>'; return; }
       list.innerHTML = events.map(function (e) {
         var p = eventParts(e);
@@ -87,7 +109,7 @@
     var grid = document.getElementById('events-preview-grid');
     if (!grid) return;
     getJSON('content/events.json').then(function (data) {
-      var events = ((data && data.events) || []).slice(0, 3);
+      var events = prepareEvents(data && data.events).slice(0, 3);
       if (!events.length) { grid.innerHTML = '<p class="event-detail">No upcoming shows posted — check back soon.</p>'; return; }
       grid.innerHTML = events.map(function (e) {
         var p = eventParts(e);
