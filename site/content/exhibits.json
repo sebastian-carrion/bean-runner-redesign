@@ -27,6 +27,13 @@
       "dates": "Mixed media",
       "status": "Featured",
       "image": "assets/images/coffee.jpg"
+    },
+    {
+      "title": "Test1",
+      "artist": "Sebastian",
+      "dates": "August - September 2026",
+      "status": "Upcoming",
+      "image": "/assets/images/uploads/clint-mckoy-h28p96ICizo-unsplash.jpg"
     }
   ]
 }
