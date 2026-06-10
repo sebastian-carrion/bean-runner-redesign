@@ -1361,3 +1361,7 @@ a { color: inherit; }
 @media (max-width: 760px) {
   .menu-list { grid-template-columns: 1fr; }
 }
+
+/* Discreet staff login link in the footer (→ Decap CMS at /admin/) */
+.footer-staff { color: var(--ash); text-decoration: none; transition: color 0.2s; }
+.footer-staff:hover { color: var(--amber); }
