@@ -125,3 +125,30 @@ collections:
                       - { label: "Gluten-Free", value: "gf" }
                       - { label: "Weekend Special", value: "special" }
                   - { name: image, label: "Photo (optional highlight)", widget: image, required: false }
+
+# ── DESIGN & BRANDING ────────────────────────────────────────
+# A single editable panel for the site's colors & fonts. The site reads
+# content/design.json at runtime (js/main.js) and applies these as CSS
+# variable overrides — leave the defaults to keep the BeanRunner look.
+singletons:
+  - name: design
+    label: "Design & Branding"
+    file: "site/content/design.json"
+    icon: palette
+    editor:
+      preview: false
+    summary: "Site colors & fonts"
+    fields:
+      - { name: accent_color, label: "Accent color — buttons, links, labels", widget: color, default: "#C8963E", allowInput: true }
+      - { name: highlight_color, label: "Highlight color — italic accents", widget: color, default: "#E8B860", allowInput: true }
+      - { name: page_background, label: "Page background", widget: color, default: "#FAF7F2", allowInput: true }
+      - name: heading_font
+        label: "Heading font"
+        widget: select
+        default: "Playfair Display"
+        options: ["Playfair Display", "DM Sans", "Georgia"]
+      - name: body_font
+        label: "Body font"
+        widget: select
+        default: "DM Sans"
+        options: ["DM Sans", "Playfair Display", "Georgia"]
