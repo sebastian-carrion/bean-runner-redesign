@@ -15,6 +15,20 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    # CSP for public pages: scripts must be self-hosted; fonts from Google; images from
+    # any HTTPS source (covers CMS-uploaded exhibit photos); maps.google.com for the
+    # contact-page iframe. 'unsafe-inline' on style-src is required by the scattered
+    # inline style="" attributes used in the HTML — tighten if those are ever removed.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'"
+
+# The Sveltia CMS admin panel is a third-party SPA loaded from unpkg.com — it
+# needs a much more permissive CSP than the public site. This block overrides
+# only the CSP header for /admin/* while all other security headers still apply.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:"
 
 # Long-cache static assets (images, css, js are safe to cache hard)
 [[headers]]
