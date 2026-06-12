@@ -1362,6 +1362,13 @@ a { color: inherit; }
   .menu-list { grid-template-columns: 1fr; }
 }
 
-/* Discreet staff login link in the footer (→ Decap CMS at /admin/) */
-.footer-staff { color: var(--ash); text-decoration: none; transition: color 0.2s; }
-.footer-staff:hover { color: var(--amber); }
+/* ── Reviews: TripAdvisor outbound link ─────────────────────── */
+.reviews-ta { text-align: center; margin-top: 32px; padding: 0 24px; }
+.reviews-ta-link { color: var(--amber) !important; border-color: var(--amber) !important; }
+.reviews-ta-link:hover { color: var(--gold) !important; border-color: var(--gold) !important; }
+
+/* ── Gallery: about/rotation strip ─────────────────────────── */
+.gallery-about-strip { border-top: 1px solid var(--parchment); }
+.gallery-about-inner { max-width: 680px; }
+.gallery-about-strip .section-title { color: var(--roast); margin-bottom: 20px; }
+.gallery-about-body { font-size: 15px; color: var(--ash); line-height: 1.8; margin-bottom: 12px; }
