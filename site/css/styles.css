@@ -410,7 +410,7 @@ a { color: inherit; }
   width: 62%;
   background:
     linear-gradient(to right, #1C0F0A 0%, rgba(28,15,10,0.55) 30%, rgba(28,15,10,0.1) 100%),
-    url('../assets/images/interior.jpg') center center / cover no-repeat;
+    url('../assets/images/hero.webp') center center / cover no-repeat;
   z-index: 0;
 }
 .hero-content {
