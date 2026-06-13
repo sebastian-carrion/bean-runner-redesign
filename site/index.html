@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BeanRunner Cafe — Coffee, Live Music & Art in Peekskill, NY</title>
-<meta name="description" content="BeanRunner Cafe is a neighborhood café, live jazz venue, and art gallery in a landmarked 1850s building in Peekskill, NY. Breakfast all day, live music every Friday & Saturday.">
+<title>BeanRunner Cafe — Coffee, Live Music &amp; Art in Peekskill, NY</title>
+<meta name="description" content="BeanRunner Cafe is a neighborhood café, live jazz venue, and art gallery in a landmarked 1850s building in Peekskill, NY. Breakfast all day, live music every Friday &amp; Saturday.">
 <link rel="canonical" href="https://www.beanrunnercafe.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="BeanRunner Cafe — Coffee, Live Music & Art in Peekskill, NY">
+<meta property="og:title" content="BeanRunner Cafe — Coffee, Live Music &amp; Art in Peekskill, NY">
 <meta property="og:description" content="A neighborhood café, live jazz venue, and art gallery in the heart of Peekskill, NY. Est. 2008.">
 <meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/interior.jpg">
 <meta property="og:url" content="https://www.beanrunnercafe.com/">
@@ -17,10 +17,9 @@
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 
-<!-- Local-business structured data for search/maps -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,19 +41,32 @@
   "priceRange": "$$",
   "foundingDate": "2008",
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "22:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "20:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday"], "opens": "08:00", "closes": "16:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday"], "opens": "08:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "08:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "18:00" }
   ]
 }
 </script>
 </head>
-<body>
+<body class="page-home">
 
-<!-- ═══ NAV (shared across all pages) ═══════════════════════════ -->
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -64,9 +76,9 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Shows</a></li>
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="events.html">Music &amp; Events</a></li>
+    <li><a href="about.html">Our Story</a></li>
     <li><a href="gallery.html">Art Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
@@ -75,418 +87,298 @@
 
 <main>
 
-  <!-- ═══ HERO ═══════════════════════════════════════════════════ -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="hero-photo" role="img" aria-label="The interior of BeanRunner Cafe"></div>
-    <div class="hero-content">
-      <img src="assets/images/logo.png" alt="" class="hero-logo" width="96" height="96">
-      <p class="hero-eyebrow">Est. 2008 · Peekskill, New York</p>
-      <h1 class="hero-title">Good food,<br><em>Fine wine,</em><br>Great Music.</h1>
-      <p class="hero-sub">Peekskill's premier live jazz &amp; music café — inside a landmarked 1850s building with rotating art exhibits and a full menu.</p>
-      <div class="hero-actions">
-        <a href="tel:+19147371701" class="btn-primary">Reserve a Table</a>
-        <a href="events.html" class="btn-ghost">This Week's Shows</a>
-      </div>
+    <div class="stage-light" aria-hidden="true"></div>
+    <div class="stage-floor" aria-hidden="true"></div>
+
+    <span class="live-badge reveal in">Live this weekend · Peekskill, NY</span>
+
+    <h1 class="hero-title reveal in">
+      Welcome to<br><em>BeanRunner</em> Café
+    </h1>
+
+    <p class="hero-sub reveal in d1">
+      Peekskill's café, listening room, and art gallery since 2008. Good food, fine wine, great music — every single week.
+    </p>
+
+    <div class="hero-actions reveal in d2">
+      <a href="events.html" class="btn-primary">See This Week's Shows</a>
+      <a href="tel:+19147371701" class="btn-ghost">Reserve — (914) 737-1701</a>
     </div>
-    <div class="hero-info">
-      <div class="hero-info-item">
-        <div class="hero-info-label">Address</div>
-        <div class="hero-info-value">201 S. Division St., Peekskill NY</div>
-      </div>
-      <div class="hero-info-item">
-        <div class="hero-info-label">Phone</div>
-        <div class="hero-info-value"><a href="tel:+19147371701" style="text-decoration:none;color:inherit;">914-737-1701</a></div>
-      </div>
-      <div class="hero-info-item">
-        <div class="hero-info-label">Live Music</div>
-        <div class="hero-info-value">Fri &amp; Sat Evenings</div>
-      </div>
-      <div class="hero-info-item">
-        <div class="hero-info-label">Hours Today</div>
-        <div class="hero-info-value">8am – 9pm</div>
-      </div>
+
+    <div class="hero-hours reveal in d3" role="complementary" aria-label="Business hours">
+      <div class="hh-row"><strong>Mon &amp; Tue</strong>8:00 AM – 4:00 PM</div>
+      <div class="hh-row"><strong>Wed &amp; Thu</strong>8:00 AM – 8:00 PM</div>
+      <div class="hh-row"><strong>Fri &amp; Sat</strong>8:00 AM – 11:00 PM</div>
+      <div class="hh-row"><strong>Sunday</strong>8:00 AM – 6:00 PM</div>
     </div>
   </section>
 
-  <!-- ═══ THREE PILLARS ══════════════════════════════════════════ -->
-  <section id="pillars" aria-label="What we offer">
-    <div class="pillar">
-      <div class="pillar-number" aria-hidden="true">01</div>
-      <span class="pillar-icon" aria-hidden="true">☕</span>
-      <h2 class="pillar-title">Food &amp; Drink</h2>
-      <p class="pillar-text">Breakfast, weekend brunch, salads, sandwiches, smoothies, espresso bar, and wine &amp; beer — all day, every day.</p>
-      <a href="menu.html" class="pillar-link">Explore the Menu</a>
+  <!-- SHOWS / TICKET STUBS -->
+  <section id="shows">
+    <span class="eyebrow reveal">The bill</span>
+    <h2 class="section-title reveal">This week <em>on stage</em></h2>
+
+    <div class="tickets">
+      <article class="ticket reveal d1">
+        <div class="ticket-main">
+          <span class="ticket-day">Every Friday</span>
+          <h3 class="ticket-name">Salsa · Reggae · <em>R&amp;B</em></h3>
+          <p class="ticket-desc">Fridays rotate through salsa, reggae, R&amp;B and singer-songwriters — a different groove every week.</p>
+          <div class="ticket-showtime">
+            <span class="t-label">Seating</span>
+            <span class="t-value">6:30 pm</span>
+          </div>
+          <div class="ticket-showtime">
+            <span class="t-label">Show starts</span>
+            <span class="t-value">7:00 pm</span>
+          </div>
+          <a href="tel:+19147371701" class="btn-ghost">Reserve a Table</a>
+        </div>
+        <div class="ticket-stub">
+          <span class="adm">Admit · One · BeanRunner</span>
+          <span class="stub-day">Fri</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal d2">
+        <div class="ticket-main">
+          <span class="ticket-day">Every Saturday</span>
+          <h3 class="ticket-name">Live <em>Jazz</em></h3>
+          <p class="ticket-desc">The signature night — straight-ahead, Latin, and vocal jazz from the Hudson Valley's finest players.</p>
+          <div class="ticket-showtime">
+            <span class="t-label">Seating</span>
+            <span class="t-value">5:30 pm</span>
+          </div>
+          <div class="ticket-showtime">
+            <span class="t-label">Show starts</span>
+            <span class="t-value">6:00 pm</span>
+          </div>
+          <a href="tel:+19147371701" class="btn-ghost">Reserve a Table</a>
+        </div>
+        <div class="ticket-stub">
+          <span class="adm">Admit · One · BeanRunner</span>
+          <span class="stub-day">Sat</span>
+        </div>
+      </article>
     </div>
-    <div class="pillar">
-      <div class="pillar-number" aria-hidden="true">02</div>
-      <span class="pillar-icon" aria-hidden="true">🎷</span>
-      <h2 class="pillar-title">Live Music</h2>
-      <p class="pillar-text">One of Westchester County's premier jazz and live music venues — Fridays and Saturdays, every week.</p>
-      <a href="events.html" class="pillar-link">See This Week</a>
-    </div>
-    <div class="pillar">
-      <div class="pillar-number" aria-hidden="true">03</div>
-      <span class="pillar-icon" aria-hidden="true">🖼️</span>
-      <h2 class="pillar-title">Art Gallery</h2>
-      <p class="pillar-text">Rotating exhibits from local and regional artists — a gallery space woven into the fabric of the café.</p>
-      <a href="gallery.html" class="pillar-link">Current Exhibit</a>
+
+    <div class="shows-foot reveal d1">
+      <p>More shows, special events, and gallery openings throughout the year.</p>
+      <a href="events.html" class="btn-primary">View Full Calendar →</a>
     </div>
   </section>
 
-  <!-- ═══ EVENTS PREVIEW ═════════════════════════════════════════ -->
-  <section id="events-preview" aria-labelledby="events-preview-title">
-    <div class="section-header">
+  <!-- FEATURED MENU ITEMS -->
+  <section id="setlist">
+    <div class="inner">
+      <figure class="setlist-photo reveal">
+        <img src="assets/images/coffee.jpg" alt="A cup of BeanRunner coffee">
+        <figcaption>Open daily from 8:00 AM</figcaption>
+      </figure>
       <div>
-        <p class="section-eyebrow">Live at BeanRunner</p>
-        <h2 class="section-title" id="events-preview-title">Upcoming Shows</h2>
-      </div>
-      <a href="events.html" class="section-more">Full Calendar →</a>
-    </div>
-
-    <div class="events-grid" id="events-preview-grid" aria-live="polite">
-      <p class="event-detail">Loading upcoming shows…</p>
-    </div>
-
-    <div class="weekly-schedule">
-      <div class="schedule-row">
-        <div class="schedule-day">Friday</div>
-        <div class="schedule-info">
-          <div class="schedule-genre">Salsa, Reggae, R&amp;B &amp; Singer / Songwriters</div>
-          <div class="schedule-time">Doors 6:30pm · Show 7:00pm</div>
+        <span class="eyebrow reveal">From the kitchen &amp; counter</span>
+        <h2 class="section-title reveal">Featured <em>Menu Items</em></h2>
+        <div style="margin-top:38px;">
+          <div class="set-item reveal">
+            <span class="set-no">01</span>
+            <div><div class="set-name">BeanRunner Latte</div><div class="set-desc">Double shot, velvet-steamed milk, house syrup</div></div>
+            <span class="set-price">$5.25</span>
+          </div>
+          <div class="set-item reveal">
+            <span class="set-no">02</span>
+            <div><div class="set-name">Coconut-Curry Chickpeas</div><div class="set-desc">Slow-simmered house favorite, served with rice</div></div>
+            <span class="set-price">$14</span>
+          </div>
+          <div class="set-item reveal">
+            <span class="set-no">03</span>
+            <div><div class="set-name">Pressed Cuban Panini</div><div class="set-desc">Roast pork, ham, swiss, pickles, mustard</div></div>
+            <span class="set-price">$13</span>
+          </div>
+          <div class="set-item reveal">
+            <span class="set-no">04</span>
+            <div><div class="set-name">Wine by the Glass</div><div class="set-desc">A short, well-chosen list for show nights</div></div>
+            <span class="set-price">$9–12</span>
+          </div>
+          <div class="set-item reveal">
+            <span class="set-no">05</span>
+            <div><div class="set-name">Local Craft Beer</div><div class="set-desc">Hudson Valley rotating taps &amp; bottles</div></div>
+            <span class="set-price">$7–9</span>
+          </div>
+          <div class="set-item reveal">
+            <span class="set-no">06</span>
+            <div><div class="set-name">Dessert Case</div><div class="set-desc">Cakes and pastries baked for the evening crowd</div></div>
+            <span class="set-price">$6–8</span>
+          </div>
         </div>
-        <a href="tel:+19147371701" class="schedule-btn">Reserve Fri</a>
-      </div>
-      <div class="schedule-row">
-        <div class="schedule-day">Saturday</div>
-        <div class="schedule-info">
-          <div class="schedule-genre">Live Jazz — The Best in Westchester</div>
-          <div class="schedule-time">Doors 5:30pm · Show 6:00pm</div>
-        </div>
-        <a href="tel:+19147371701" class="schedule-btn">Reserve Sat</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ MENU PREVIEW (guest favorites) ═════════════════════════ -->
-  <section id="menu-preview" aria-labelledby="menu-preview-title">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">From the Kitchen</p>
-        <h2 class="section-title" id="menu-preview-title">Guest Favorites</h2>
-      </div>
-      <a href="menu.html" class="section-more">Full Menu →</a>
-    </div>
-
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-photo"><img src="assets/images/sandwich.jpg" alt="BRC Egg Sandwich" loading="lazy" width="80" height="80"></div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">BRC Egg Sandwich</h3>
-          <p class="menu-item-desc">Ham, bacon, or turkey with 2 eggs &amp; cheese on ciabatta or bagel</p>
-          <div class="menu-item-price">$7.14</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-photo" aria-hidden="true">🥞</div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">Nutella Crepe</h3>
-          <p class="menu-item-desc">Strawberries, bananas, Nutella, whipped cream &amp; chocolate sauce</p>
-          <div class="menu-item-price">$9.85</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-photo"><img src="assets/images/cafe2.jpg" alt="Vegetarian Omelet" loading="lazy" width="80" height="80"></div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">Vegetarian Omelet <span class="menu-badge badge-vegan">Veg</span></h3>
-          <p class="menu-item-desc">Fresh tomatoes, onions, green and red peppers</p>
-          <div class="menu-item-price">$9.95</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-photo" aria-hidden="true">🧇</div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">Chicken &amp; Waffle</h3>
-          <p class="menu-item-desc">Southern fried chicken on a fresh Belgian waffle</p>
-          <div class="menu-item-price">$16.50</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-photo" aria-hidden="true">🥗</div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">Coconut-Curry Chickpeas <span class="menu-badge badge-vegan">Vegan</span></h3>
-          <p class="menu-item-desc">Coconut milk, red onions, peppers, maple &amp; lime — bowl, wrap, or salad</p>
-          <div class="menu-item-price">$14.15</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-photo"><img src="assets/images/coffee.jpg" alt="Yogurt Parfait" loading="lazy" width="80" height="80"></div>
-        <div class="menu-item-info">
-          <h3 class="menu-item-name">Yogurt Parfait <span class="menu-badge badge-gf">GF</span></h3>
-          <p class="menu-item-desc">With fresh fruit &amp; granola</p>
-          <div class="menu-item-price">$5.95</div>
+        <div class="setlist-foot reveal">
+          <a href="menu.html" class="section-more">Full menu — 75+ items across 11 categories →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ ABOUT STRIP ════════════════════════════════════════════ -->
-  <section id="about-strip" aria-labelledby="about-strip-title">
-    <div class="about-visual">
-      <blockquote class="about-quote">
-        <p>"When I saw it I knew, it was a building with a soul."</p>
-        <cite>— Drew Claxton, Co-founder</cite>
-      </blockquote>
-    </div>
-    <div class="about-content">
-      <p class="section-eyebrow">Our Story</p>
-      <h2 class="section-title" id="about-strip-title">A Cafe With a Soul</h2>
-      <p class="about-body">Ted Bitter and Drew Claxton turned an abandoned 1850s blacksmith shop into Peekskill's beloved community gathering place. Since opening in 2008, BeanRunner has become one of Westchester County's premier jazz venues — beloved by musicians and audiences alike.</p>
-      <a href="about.html" class="btn-primary">Read Our Story</a>
-    </div>
-  </section>
-
-  <!-- ═══ HOURS ══════════════════════════════════════════════════ -->
-  <section id="hours" aria-labelledby="hours-title">
-    <div class="hours-label-block">
-      <p class="section-eyebrow">We're Open</p>
-      <h2 class="section-title" id="hours-title">Hours of<br>Operation</h2>
-    </div>
-    <div class="hours-grid">
-      <div class="hours-block">
-        <div class="hours-days">Mon – Fri</div>
-        <div class="hours-time">8:00am – 9:00pm</div>
+  <!-- OUR STORY -->
+  <section id="room">
+    <span class="eyebrow reveal">Since 2008</span>
+    <h2 class="section-title reveal">Our <em>Story</em></h2>
+    <div class="room-grid">
+      <div class="room-copy">
+        <p class="reveal d1">The BeanRunner Café is the answer to <strong>Ted Bitter's</strong> and <strong>Drew Claxton's</strong> lifelong dreams — Ted wanted to create a neighborhood café and Drew wanted to restore historic buildings. Together, they did both.</p>
+        <p class="reveal d1" style="margin-top:18px;">The couple purchased an old, abandoned building in 2001, did a historic restoration, landmarked the building, and opened the Café in 2008.</p>
+        <div class="room-read-more reveal d2">
+          <a href="about.html" class="section-more">Read full story →</a>
+        </div>
       </div>
-      <div class="hours-block">
-        <div class="hours-days">Saturday</div>
-        <div class="hours-time">8:00am – 10:00pm</div>
-      </div>
-      <div class="hours-block">
-        <div class="hours-days">Sunday</div>
-        <div class="hours-time">9:00am – 8:00pm</div>
-      </div>
-      <div class="hours-block">
-        <div class="hours-days">Kitchen</div>
-        <div class="hours-time">Closes 30 min<br>before close</div>
+      <div class="room-photos">
+        <figure class="reveal d1"><img src="assets/images/interior.jpg" alt="The interior of BeanRunner Cafe"></figure>
+        <figure class="reveal d2"><img src="assets/images/cafe_people.jpg" alt="Guests at BeanRunner Cafe"></figure>
       </div>
     </div>
   </section>
 
-  <!-- ═══ GALLERY TEASER ═════════════════════════════════════════ -->
-  <section id="gallery-teaser" aria-labelledby="gallery-teaser-title">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Art Gallery</p>
-        <h2 class="section-title" id="gallery-teaser-title">Now Exhibiting</h2>
+  <!-- ART GALLERY -->
+  <section id="gallery">
+    <div class="inner">
+      <div class="gallery-exhibit reveal d1">
+        <img
+          src="https://static.wixstatic.com/media/299644_b316b6300afa4767bbe7fe1bcfc6fe29~mv2.jpg/v1/fill/w_655,h_655,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Winzig%20Promo%20for%20Drew%203-7-2026.jpg"
+          alt="Current exhibit: Winzig at BeanRunner Cafe"
+          loading="lazy"
+        >
+        <div class="exhibit-badge">Now Exhibiting</div>
       </div>
-      <a href="gallery.html" class="section-more">View All Exhibits →</a>
-    </div>
-    <div class="gallery-mosaic">
-      <a class="gallery-cell" href="gallery.html">
-        <div class="gallery-cell-label">
-          <div class="gallery-cell-label-title">Dining at BeanRunner</div>
-          <div class="gallery-cell-label-sub">201 S. Division St · Peekskill, NY</div>
+      <div class="gallery-copy">
+        <span class="eyebrow reveal">Art Gallery</span>
+        <h2 class="section-title reveal">The walls<br><em>always change.</em></h2>
+        <p class="artist-name reveal d1">Winzig</p>
+        <p class="reveal d2">BeanRunner doubles as a rotating gallery for Hudson Valley artists. A new exhibit hangs every month — come for the coffee, stay for the art, leave with something on the wall.</p>
+        <p class="reveal d2">Gallery is free to browse any time we're open.</p>
+        <div class="gallery-links reveal d3">
+          <a href="gallery.html" class="btn-primary">Visit the Gallery</a>
+          <a href="gallery.html" class="section-more">Past Exhibits →</a>
         </div>
-      </a>
-      <a class="gallery-cell" href="gallery.html">
-        <div class="gallery-cell-label">
-          <div class="gallery-cell-label-title">The Community</div>
-          <div class="gallery-cell-label-sub">Gather · Listen · Belong</div>
-        </div>
-      </a>
-      <a class="gallery-cell" href="gallery.html">
-        <div class="gallery-cell-label">
-          <div class="gallery-cell-label-title">Espresso Bar</div>
-          <div class="gallery-cell-label-sub">Track Side Espresso</div>
-        </div>
-      </a>
-      <a class="gallery-cell" href="gallery.html">
-        <div class="gallery-cell-label">
-          <div class="gallery-cell-label-title">Craft Drinks</div>
-          <div class="gallery-cell-label-sub">Wine · Beer · Coffee</div>
-        </div>
-      </a>
-      <a class="gallery-cell" href="gallery.html">
-        <div class="gallery-cell-label">
-          <div class="gallery-cell-label-title">From the Kitchen</div>
-          <div class="gallery-cell-label-sub">Made to order</div>
-        </div>
-      </a>
+      </div>
     </div>
   </section>
 
-  <!-- ═══ REVIEWS ════════════════════════════════════════════════ -->
-  <section class="reviews-section" aria-labelledby="reviews-title" tabindex="0">
-    <div class="reviews-header">
-      <span class="reviews-eyebrow">What Guests Are Saying</span>
-      <h2 class="reviews-title" id="reviews-title">Stories From <em>The Bean Runner</em></h2>
+  <!-- CROWD / REVIEWS -->
+  <section id="crowd">
+    <span class="eyebrow reveal">4.3★ on TripAdvisor · #17 in Peekskill</span>
+    <h2 class="section-title reveal">What the <em>crowd</em> says</h2>
+    <div class="crowd-grid">
+      <article class="crowd-card reveal d1">
+        <div class="crowd-stars">★★★★★</div>
+        <p class="crowd-text">Super tasty, comfortable, casual place for a weekend lunch. I really loved the coconut-curry chickpeas — and they have live music too.</p>
+        <div class="crowd-meta"><strong>Bonnie M</strong> · TripAdvisor · Aug 2024</div>
+      </article>
+      <article class="crowd-card reveal d2">
+        <div class="crowd-stars">★★★★★</div>
+        <p class="crowd-text">A hidden gem in Peekskill. Great coffee, friendly staff, and the Saturday jazz turns the whole room into something special.</p>
+        <div class="crowd-meta"><strong>Larry K</strong> · TripAdvisor · Mar 2017</div>
+      </article>
+      <article class="crowd-card reveal d3">
+        <div class="crowd-stars">★★★★★</div>
+        <p class="crowd-text">Part café, part gallery, part jazz club — there's nowhere else like it in the Hudson Valley. The art changes every visit.</p>
+        <div class="crowd-meta"><strong>A Local Regular</strong> · TripAdvisor · Oct 2017</div>
+      </article>
     </div>
-
-    <div class="reviews-track-wrap">
-      <div class="reviews-track" aria-live="polite">
-        <article class="review-card active">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">In the heart of Peekskill's art core, The BeanRunner Cafe is a gathering place for all culture vultures who love great breakfasts, lunches, desserts, wine and more, with a touch of Caribbean flair. The owners are friendly, the staff is attentive, and the vibe is always welcoming.</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">ChanteuseSimone</span>
-              <span class="review-source">TripAdvisor · August 2011</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-        <article class="review-card">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">Bean Runner is a wonderful addition to the Hudson Valley music scene. It's a small, cozy room with excellent sound. The musicians are the main attraction — they range from good to fabulous.</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">Larry K</span>
-              <span class="review-source">TripAdvisor · March 2017</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-        <article class="review-card">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">Super tasty, comfortable, casual place for a weekend lunch! Everything looked good, and I really loved the coconut-curry chickpeas. It looks like they have live music sometimes too — I can see that would be fun.</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">Bonnie M</span>
-              <span class="review-source">TripAdvisor · August 2024</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-        <article class="review-card">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">Loved this place! Coffee was robust and fresh. Pastry and service excellent. A great place to chill with a great cup of Java — relaxed atmosphere and helpful staff. Upscale village feel!</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">Antonia S</span>
-              <span class="review-source">TripAdvisor · April 2018</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-        <article class="review-card">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">Cozy coffee house with excellent soups, sandwiches, cakes and friendly servers. Relaxed on a comfy couch — far better than any Starbucks, including the taste of the coffee.</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">FredLawrence_NC</span>
-              <span class="review-source">TripAdvisor · October 2017</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-        <article class="review-card">
-          <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
-          <p class="review-text">As an artist, BeanRunner has a great inspirational vibe. I ate here for breakfast and lunch several times during my last visit. I love that it's low-key but also has a good variety of food and drinks.</p>
-          <div class="review-meta">
-            <div class="review-meta-left">
-              <span class="review-name">Jennella Y</span>
-              <span class="review-source">TripAdvisor · September 2020</span>
-            </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">
-              <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="reviews-nav">
-        <button class="reviews-arrow" data-review-prev aria-label="Previous review">←</button>
-        <div class="reviews-dots">
-          <button class="reviews-dot active"></button>
-          <button class="reviews-dot"></button>
-          <button class="reviews-dot"></button>
-          <button class="reviews-dot"></button>
-          <button class="reviews-dot"></button>
-          <button class="reviews-dot"></button>
-        </div>
-        <button class="reviews-arrow" data-review-next aria-label="Next review">→</button>
-      </div>
+    <div class="crowd-foot reveal">
+      <a class="section-more" href="https://www.tripadvisor.com/Restaurant_Review-g47930-d473643-Reviews-Bean_Runner_Cafe-Peekskill_New_York.html" target="_blank" rel="noopener">Read all 46 reviews on TripAdvisor →</a>
     </div>
-
-    <div class="reviews-ta">
-      <a href="https://www.tripadvisor.com/Restaurant_Review-g47930-d473643-Reviews-Bean_Runner_Cafe-Peekskill_New_York.html" target="_blank" rel="noopener" class="section-more reviews-ta-link">Read all 46 reviews on TripAdvisor →</a>
-    </div>
-
   </section>
 
-  <!-- ═══ CONTACT CTA ═══════════════════════════════════════════ -->
-  <div class="about-cta" role="complementary" aria-label="Find us">
-    <div>
-      <h2>Come Visit <em>BeanRunner</em></h2>
-      <p>201 S. Division St. · Peekskill, NY 10566 · Open daily from 8am</p>
-      <p style="margin-top:6px;"><a href="tel:+19147371701" style="color:var(--gold);text-decoration:none;">914-737-1701</a></p>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="inner">
+      <span class="eyebrow reveal">Find us</span>
+      <h2 class="reveal">Come say <em>hello.</em></h2>
+      <p class="sub reveal d1">201 S. Division St. · Peekskill, NY 10566</p>
+
+      <div class="contact-info-row reveal d2">
+        <div class="contact-item">
+          <span class="ci-label">Phone</span>
+          <a class="ci-value" href="tel:+19147371701">(914) 737-1701</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Email</span>
+          <a class="ci-value" href="mailto:beanman.beanrunnercafe@gmail.com" style="font-size:15px;">beanman.beanrunnercafe@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="social-row reveal d3">
+        <a class="social-btn" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a class="social-btn" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.026 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.093 24 18.1 24 12.073z"/></svg>
+        </a>
+      </div>
+
+      <hr class="contact-divider">
+
+      <span class="eyebrow reveal">Hours</span>
+      <div class="hours-grid reveal d1">
+        <div class="hours-cell">
+          <span class="hours-day">Mon &amp; Tue</span>
+          <span class="hours-time">8:00 AM – 4:00 PM</span>
+        </div>
+        <div class="hours-cell">
+          <span class="hours-day">Wed &amp; Thu</span>
+          <span class="hours-time">8:00 AM – 8:00 PM</span>
+        </div>
+        <div class="hours-cell">
+          <span class="hours-day">Fri &amp; Sat</span>
+          <span class="hours-time">8:00 AM – 11:00 PM</span>
+          <span class="hours-note">Live music nights</span>
+        </div>
+        <div class="hours-cell">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-time">8:00 AM – 6:00 PM</span>
+        </div>
+      </div>
     </div>
-    <div class="about-cta-actions">
-      <a href="contact.html" class="btn-primary">Get in Touch →</a>
-      <a href="https://maps.google.com/?q=201+S+Division+St+Peekskill+NY" target="_blank" rel="noopener" class="btn-ghost">Get Directions</a>
-    </div>
-  </div>
+  </section>
 
 </main>
 
-<!-- ═══ FOOTER (shared across all pages) ════════════════════════ -->
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
-<script src="js/reviews.js" defer></script>
-<script src="js/collections.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>

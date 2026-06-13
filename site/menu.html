@@ -3,24 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu — BeanRunner Cafe, Peekskill NY</title>
-<meta name="description" content="The full BeanRunner Cafe menu — breakfast served all day, weekend brunch, salads, sandwiches, vegan & vegetarian options, smoothies, desserts, craft espresso, wine & beer. Peekskill, NY.">
-<link rel="canonical" href="https://www.beanrunnercafe.com/menu.html">
+<title>Menu — BeanRunner Cafe · Peekskill, NY</title>
+<meta name="description" content="Full menu at BeanRunner Cafe in Peekskill, NY. Breakfast all day, sandwiches, salads, smoothies, craft espresso, wine &amp; beer. Dine in or take out.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/menu">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Menu — BeanRunner Cafe">
-<meta property="og:description" content="Breakfast all day, brunch, sandwiches, vegan options, craft espresso, wine & beer in Peekskill, NY.">
-<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/menu/brunch-combo.jpg">
+<meta property="og:title" content="Menu — BeanRunner Cafe · Peekskill, NY">
+<meta property="og:description" content="Breakfast all day, sandwiches, salads, smoothies, craft espresso, wine &amp; beer. Open daily from 8 AM.">
+<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/coffee.jpg">
+<meta property="og:url" content="https://www.beanrunnercafe.com/menu">
+
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -30,9 +46,9 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="menu.html" aria-current="page">Menu</a></li>
-    <li><a href="events.html">Music &amp; Events</a></li>
+    <li><a href="events.html">Shows</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="about.html">Our Story</a></li>
     <li><a href="gallery.html">Art Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
@@ -41,69 +57,787 @@
 
 <main>
 
-  <header class="menu-page-hero">
-    <p class="page-hero-eyebrow">BeanRunner Cafe · Peekskill, NY</p>
-    <h1>Our <em>Full Menu</em></h1>
-    <p>Breakfast served all day. Sandwiches, salads, soups, smoothies, craft espresso, wine &amp; beer. Dine in, take out, or call ahead at <a href="tel:+19147371701" style="color:var(--gold);text-decoration:none;">914-737-1701</a>.</p>
-  </header>
+<div class="menu-hero">
+  <span class="menu-hero-eyebrow">BeanRunner Cafe · Peekskill, NY</span>
+  <h1>Our <em>Full Menu</em></h1>
+  <p class="menu-hero-sub">Breakfast served all day. Sandwiches, salads, soups, smoothies, craft espresso, wine &amp; beer.</p>
+  <p class="menu-hero-note">Dine in, take out, or call ahead — (914) 737-1701</p>
+</div>
 
-  <!-- Sticky category tabs (built by collections.js) -->
-  <nav class="menu-tabbar" id="menu-tabbar" aria-label="Menu categories"></nav>
-
-  <!-- Menu sections (built by collections.js from content/menu.json) -->
-  <div class="menu-body" id="menu-body" aria-live="polite">
-    <p class="menu-foot-note">Loading the menu…</p>
+<div class="menu-tabs-wrap">
+  <div class="menu-tabs">
+    <button class="menu-tab active" data-target="breakfast">Breakfast</button>
+    <button class="menu-tab" data-target="brunch">Weekend Brunch</button>
+    <button class="menu-tab" data-target="salads">Salads</button>
+    <button class="menu-tab" data-target="sandwiches">Sandwiches &amp; More</button>
+    <button class="menu-tab" data-target="veggie">Veggie</button>
+    <button class="menu-tab" data-target="smoothies">Smoothies</button>
+    <button class="menu-tab" data-target="kids">Kids</button>
+    <button class="menu-tab" data-target="desserts">Desserts</button>
+    <button class="menu-tab" data-target="coffee">Coffee &amp; Tea</button>
+    <button class="menu-tab" data-target="wine">Wine &amp; Beer</button>
+    <button class="menu-tab" data-target="espresso">Espresso Bar</button>
   </div>
+</div>
+
+<div class="menu-body">
+
+<!-- BREAKFAST -->
+<section class="menu-category reveal" id="breakfast">
+  <h2 class="menu-cat-title">Breakfast</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_a4a2bdac14784f12a9e87e0c9e19ecd4~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/d2f902_a4a2bdac14784f12a9e87e0c9e19ecd4~mv2.jpg" alt="BRC Egg Sandwich Special" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">BRC Egg Sandwich Special</div>
+        <div class="menu-card-desc">House-made roll, egg, cheese &amp; choice of protein</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.50</span><span class="menu-badge">Special</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_a4a2bdac14784f12a9e87e0c9e19ecd4~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/d2f902_a4a2bdac14784f12a9e87e0c9e19ecd4~mv2.jpg" alt="BRC Egg Sandwich with Coffee" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">BRC Egg Sandwich with Coffee</div>
+        <div class="menu-card-desc">Add a drip coffee to any egg sandwich</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_f54498ebd3df438bb9ae433e2a4dd83a~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_f54498ebd3df438bb9ae433e2a4dd83a~mv2.png" alt="Two Eggs" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Two Eggs</div>
+        <div class="menu-card-desc">Any style, with home fries &amp; toast</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_043e796e89bb4fcfbc6ace7007f25a6e~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_043e796e89bb4fcfbc6ace7007f25a6e~mv2.png" alt="Cheese Omelet" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cheese Omelet</div>
+        <div class="menu-card-desc">Three eggs, cheddar, home fries &amp; toast</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_4c5947a7a14148f280d947a2b59457e5~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_4c5947a7a14148f280d947a2b59457e5~mv2.png" alt="Ham &amp; Cheese Omelet" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Ham &amp; Cheese Omelet</div>
+        <div class="menu-card-desc">Three eggs, ham, cheddar, home fries &amp; toast</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$10.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_dcd4050503284604a1741d3baecb35a3~mv2.png/v1/fill/w_520,h_360,al_c,q_85/7e70dc_dcd4050503284604a1741d3baecb35a3~mv2.png" alt="Sausage &amp; Pepper Omelet" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Sausage &amp; Pepper Omelet</div>
+        <div class="menu-card-desc">Three eggs, sweet sausage, peppers, home fries &amp; toast</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$10.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_ec7c376edf584a4c8eeaae1a13b12c31~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_ec7c376edf584a4c8eeaae1a13b12c31~mv2.jpg" alt="Vegetarian Omelet" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Vegetarian Omelet</div>
+        <div class="menu-card-desc">Three eggs, peppers, onions, spinach, mushrooms</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.50</span><span class="menu-badge">Vegan Option</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_607b16e7ac86460f9bb017ecbbc6c5b1~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_607b16e7ac86460f9bb017ecbbc6c5b1~mv2.jpg" alt="Greek Omelet" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Greek Omelet</div>
+        <div class="menu-card-desc">Three eggs, feta, olives, tomato, spinach</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$10.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_66b4574a05b4486e96700307b2c61b61~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_66b4574a05b4486e96700307b2c61b61~mv2.png" alt="Belgian Waffles" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Belgian Waffles</div>
+        <div class="menu-card-desc">With maple syrup &amp; butter</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_7b292055ca544d01856e28f0b899a92f~mv2.png/v1/fill/w_520,h_360,al_c,q_85/299644_7b292055ca544d01856e28f0b899a92f~mv2.png" alt="Chicken &amp; Waffle" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Chicken &amp; Waffle</div>
+        <div class="menu-card-desc">Crispy chicken tenders, Belgian waffle, maple syrup</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$14.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_c52a49040ffa4647a0f9343251df5770~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_c52a49040ffa4647a0f9343251df5770~mv2.png" alt="Pancakes" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Pancakes</div>
+        <div class="menu-card-desc">Three fluffy pancakes, maple syrup &amp; butter</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$8.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_57a2e43830c04b45834beb6bff0b0838~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_57a2e43830c04b45834beb6bff0b0838~mv2.png" alt="French Toast" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">French Toast</div>
+        <div class="menu-card-desc">Thick-cut brioche, powdered sugar, maple syrup</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$8.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_aa422239058d454f9538ddeff210157a~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/d2f902_aa422239058d454f9538ddeff210157a~mv2.jpeg" alt="Nutella Crepe" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Nutella Crepe</div>
+        <div class="menu-card-desc">Thin crepe, Nutella, banana, powdered sugar</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_62a48039fa834c8c9efc814b68a2414a~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_62a48039fa834c8c9efc814b68a2414a~mv2.jpg" alt="Oatmeal with Berries" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Oatmeal with Berries &amp; Pure Maple Syrup</div>
+        <div class="menu-card-desc">Steel-cut oats, seasonal berries, maple syrup</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.00</span><span class="menu-badge">Vegan</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_633141e0545847afacb8ab1ef52646cd~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_633141e0545847afacb8ab1ef52646cd~mv2.jpg" alt="Yogurt Parfait" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Yogurt Parfait</div>
+        <div class="menu-card-desc">Greek yogurt, granola, honey, fresh berries</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_dc2be23175e54cecb8a8c7846c94b452~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_dc2be23175e54cecb8a8c7846c94b452~mv2.png" alt="Fresh Fruit Cup" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Fresh Fruit Cup</div>
+        <div class="menu-card-desc">Seasonal fresh fruit</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_49e0a65dc82246329f2efc8567aee58e~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_49e0a65dc82246329f2efc8567aee58e~mv2.jpg" alt="Bagel or Ciabatta Roll" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Bagel or Ciabatta Roll</div>
+        <div class="menu-card-desc">With cream cheese, butter, or jam</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$3.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_2c41c370df15487985ed1e6ba560df40~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_2c41c370df15487985ed1e6ba560df40~mv2.jpg" alt="Assorted Muffins &amp; Croissants" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Assorted Muffins &amp; Croissants</div>
+        <div class="menu-card-desc">Baked fresh daily</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$3.00–$4.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_970179d9858646bcb62119c85a102e6b~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_970179d9858646bcb62119c85a102e6b~mv2.jpg" alt="Sides" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Sides</div>
+        <div class="menu-card-desc">Home fries, bacon, sausage, toast, extra egg</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$2.00–$4.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKEND BRUNCH -->
+<section class="menu-category reveal d1" id="brunch">
+  <h2 class="menu-cat-title">Weekend Brunch</h2>
+  <p class="menu-cat-note">Served Saturday &amp; Sunday only</p>
+  <div class="menu-grid">
+    <div class="menu-card featured">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_d2e6664aef6842c38e96babab7d9e5d5~mv2.jpg/v1/fill/w_520,h_400,al_c,q_85/7e70dc_d2e6664aef6842c38e96babab7d9e5d5~mv2.jpg" alt="Brunch Combo" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Brunch Combo</div>
+        <div class="menu-card-desc">Two eggs any style, home fries, toast, and your choice of bacon or sausage</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$14.00</span><span class="menu-badge">Featured</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALADS -->
+<section class="menu-category reveal d1" id="salads">
+  <h2 class="menu-cat-title">Organic Mixed Greens Salads</h2>
+  <p class="menu-cat-note">All salads made with local organic mixed greens</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_dbb708cac1f2450394f41a2275fe43f6~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_dbb708cac1f2450394f41a2275fe43f6~mv2.png" alt="Greek Salmon" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Greek Salmon</div>
+        <div class="menu-card-desc">Mixed greens, grilled salmon, feta, olives, cucumber, tomato, red onion</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$16.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_750102d0b6be4c3cae5aeafe6646f6ca~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_750102d0b6be4c3cae5aeafe6646f6ca~mv2.png" alt="Winter &amp; Summer Games" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Winter &amp; Summer Games</div>
+        <div class="menu-card-desc">Mixed greens, seasonal vegetables, house vinaigrette</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_5de4dca8447341bc99ee75fabf2e6f01~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_5de4dca8447341bc99ee75fabf2e6f01~mv2.png" alt="Mediterranean Meter" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Mediterranean Meter</div>
+        <div class="menu-card-desc">Mixed greens, roasted red pepper, artichoke, feta, kalamata olives, lemon vinaigrette</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_eca2dc748c3e457d95e6f3761f17d254~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_eca2dc748c3e457d95e6f3761f17d254~mv2.png" alt="Fiesta Finish Line" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Fiesta Finish Line</div>
+        <div class="menu-card-desc">Mixed greens, black beans, corn, avocado, jalapeño, lime vinaigrette</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span><span class="menu-badge">Vegan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SANDWICHES -->
+<section class="menu-category reveal d1" id="sandwiches">
+  <h2 class="menu-cat-title">Sandwiches, Pizza &amp; Soups</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_9ad6bdf2c2e6470a9dba660e75fa24f5~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_9ad6bdf2c2e6470a9dba660e75fa24f5~mv2.jpg" alt="Runners' Club" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Runners' Club</div>
+        <div class="menu-card-desc">Turkey, bacon, swiss, lettuce, tomato, mayo on ciabatta</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_0fc252e430bd4ff9a6ce77e18feffdff~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_0fc252e430bd4ff9a6ce77e18feffdff~mv2.png" alt="Cross Country" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cross Country</div>
+        <div class="menu-card-desc">Grilled chicken, roasted peppers, fresh mozzarella, pesto on focaccia</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$14.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🥪</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">High Jump</div>
+        <div class="menu-card-desc">Roast beef, cheddar, caramelized onion, horseradish aioli on sourdough</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$14.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🥪</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Olympic Mile</div>
+        <div class="menu-card-desc">Tuna salad, cucumber, sprouts, avocado on whole wheat</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_c13dededef924724856415bcde1701e5~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_c13dededef924724856415bcde1701e5~mv2.png" alt="Flatbush Jog" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Flatbush Jog</div>
+        <div class="menu-card-desc">Grilled ham, swiss, pickles, mustard on rye (pressed)</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_98c56665b757422a8fb0abfb8e79260e~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_98c56665b757422a8fb0abfb8e79260e~mv2.png" alt="Freestyle Tuna" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Freestyle Tuna</div>
+        <div class="menu-card-desc">House tuna salad with celery, red onion, dill on your choice of bread</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🥪</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Hurdle</div>
+        <div class="menu-card-desc">BLT with avocado, house aioli on toasted ciabatta</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_261969e646de44cf849bcea978c9829d~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_261969e646de44cf849bcea978c9829d~mv2.png" alt="Philly Cheesesteak" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Philly Cheesesteak</div>
+        <div class="menu-card-desc">Shaved ribeye, sautéed peppers &amp; onions, provolone on a hoagie roll</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$14.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_946c8fddbd504b88b64d0ff6f2f3b5f6~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_946c8fddbd504b88b64d0ff6f2f3b5f6~mv2.png" alt="Gyros" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Gyros</div>
+        <div class="menu-card-desc">Seasoned lamb &amp; beef, tzatziki, tomato, red onion, pita</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_0a90c4a8eb904bd0b36fecf75e97fcb0~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_0a90c4a8eb904bd0b36fecf75e97fcb0~mv2.png" alt="Discus Pizza" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Discus Pizza</div>
+        <div class="menu-card-desc">10" flatbread pizza with your choice of toppings</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$13.00–$16.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_5fcb79f5c0d9462a823e6ebc4c37bd3e~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_5fcb79f5c0d9462a823e6ebc4c37bd3e~mv2.png" alt="Jerk or Baked Salmon Sandwich" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Jerk or Baked Salmon Sandwich</div>
+        <div class="menu-card-desc">Caribbean-spiced, lettuce, tomato, mango salsa on brioche</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$15.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_92811416026040c5a5bd7c04e5b48bdd~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/d2f902_92811416026040c5a5bd7c04e5b48bdd~mv2.jpeg" alt="Jamaican Beef Patties" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Jamaican Beef Patties</div>
+        <div class="menu-card-desc">Two flaky pastry patties with spiced beef filling</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$6.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_6c3b3dda0ec64e9f95b2044998101951~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_6c3b3dda0ec64e9f95b2044998101951~mv2.png" alt="Soups of the Day" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Soups of the Day</div>
+        <div class="menu-card-desc">Always made from scratch — ask your server</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$6.00–$8.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_5449566f88174005b6dc7b54e411b6a1~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_5449566f88174005b6dc7b54e411b6a1~mv2.jpg" alt="Half Soup, Sandwich or Salad" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">½ Soup, Sandwich or Salad</div>
+        <div class="menu-card-desc">Half portions available for mix &amp; match</div>
+        <div class="menu-card-footer"><span class="menu-card-price">Market price</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEGGIE -->
+<section class="menu-category reveal d1" id="veggie">
+  <h2 class="menu-cat-title">Verifiably Veggie</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_74f95b7e398f4d8b86357b55dcaafe29~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_74f95b7e398f4d8b86357b55dcaafe29~mv2.jpg" alt="Coconut-Curry Chickpeas" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Coconut-Curry Chickpeas</div>
+        <div class="menu-card-desc">Slow-simmered chickpeas in coconut curry sauce, served with basmati rice</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span><span class="menu-badge">Vegan</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_ba7c3bf3302c4fed9f470a9ebd9537c7~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_ba7c3bf3302c4fed9f470a9ebd9537c7~mv2.jpg" alt="The Bolt" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">The Bolt</div>
+        <div class="menu-card-desc">Grilled portobello, roasted red pepper, fresh mozzarella, arugula, balsamic on focaccia</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_628c72fd66b24f149006007db1756952~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_628c72fd66b24f149006007db1756952~mv2.jpg" alt="The Starting Line" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">The Starting Line</div>
+        <div class="menu-card-desc">Hummus, roasted vegetables, feta, spinach on whole wheat pita</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$11.00</span><span class="menu-badge">Vegan Option</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🌱</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Pole Vault</div>
+        <div class="menu-card-desc">Black bean burger, avocado, lettuce, tomato, pickles on a brioche bun</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$13.00</span><span class="menu-badge">Vegan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMOOTHIES -->
+<section class="menu-category reveal d1" id="smoothies">
+  <h2 class="menu-cat-title">Fresh Fruit Smoothies</h2>
+  <p class="menu-cat-note">All smoothies made with fresh fruit, no added sugar</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg" alt="Mixed Fruit Splash" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Mixed Fruit Splash</div>
+        <div class="menu-card-desc">Mango, pineapple, banana, orange juice</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.50</span><span class="menu-badge">Vegan</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_b1ec470b1f734c2994c771b4decbd772~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_b1ec470b1f734c2994c771b4decbd772~mv2.png" alt="Strawberry/Banana Bump" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Strawberry/Banana Bump</div>
+        <div class="menu-card-desc">Strawberries, banana, yogurt, honey</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg" alt="Peanut Butter Blast" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Peanut Butter Blast</div>
+        <div class="menu-card-desc">Peanut butter, strawberry, banana, mango, agave &amp; milk</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.95</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/d2f902_ebd95610153f4549bcf3565def6a4255~mv2.jpg" alt="Banana-Mango Mania" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Banana-Mango Mania</div>
+        <div class="menu-card-desc">Banana, mango, yogurt, agave &amp; milk</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.75</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_9a787024e3f04c7caac9cdefc56e48c2~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_9a787024e3f04c7caac9cdefc56e48c2~mv2.png" alt="Tropical Summer Splash" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Tropical Summer Splash</div>
+        <div class="menu-card-desc">Mango, banana, piña colada syrup, agave &amp; pineapple juice</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.95</span></div>
+      </div>
+    </div>
+    <div class="menu-note-card">
+      Ask about our seasonal smoothies and add-ons: protein powder, almond milk, coconut milk — almond, oat or coconut milk substitution +$0.75–$0.95
+    </div>
+  </div>
+</section>
+
+<!-- KIDS -->
+<section class="menu-category reveal d1" id="kids">
+  <h2 class="menu-cat-title">Kids Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/299644_3b10e7e8aef2488eb48de578b5332914~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/299644_3b10e7e8aef2488eb48de578b5332914~mv2.jpg" alt="Kids Pancakes" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Kids Pancakes</div>
+        <div class="menu-card-desc">Two small pancakes, syrup, fruit</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🍳</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Kids Egg &amp; Toast</div>
+        <div class="menu-card-desc">One egg any style, toast</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$4.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🧀</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Kids Grilled Cheese</div>
+        <div class="menu-card-desc">American cheese on white bread, served with fruit</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🥜</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Kids PB&amp;J</div>
+        <div class="menu-card-desc">Peanut butter and jelly on white bread, served with fruit</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$4.50</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESSERTS -->
+<section class="menu-category reveal d1" id="desserts">
+  <h2 class="menu-cat-title">Desserts</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_03aa40d636c146568b962e100f8ff8a4~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_03aa40d636c146568b962e100f8ff8a4~mv2.png" alt="Cheesecake" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cheesecake</div>
+        <div class="menu-card-desc">Classic New York style, seasonal fruit topping</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$6.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_9dfa3513002d4c8baca29f890e8f9053~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_9dfa3513002d4c8baca29f890e8f9053~mv2.png" alt="Chocolate Lava Cake" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Chocolate Lava Cake</div>
+        <div class="menu-card-desc">Warm chocolate cake, vanilla ice cream</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_aa422239058d454f9538ddeff210157a~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/d2f902_aa422239058d454f9538ddeff210157a~mv2.jpeg" alt="Nutella Crepe" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Nutella Crepe</div>
+        <div class="menu-card-desc">Fresh strawberries &amp; bananas, Nutella, whipped cream &amp; chocolate sauce</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$9.85</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_c86faf324fb14181a0cce42881c1bc79~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_c86faf324fb14181a0cce42881c1bc79~mv2.jpeg" alt="Affogato" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Affogato</div>
+        <div class="menu-card-desc">Vanilla gelato steeped in espresso</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.95</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_45dd2090289340df80b5f265ae742055~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_45dd2090289340df80b5f265ae742055~mv2.jpg" alt="Daily Baked Goods" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Daily Baked Goods</div>
+        <div class="menu-card-desc">Ask your server for today's baked selection</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$3.00–$5.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COFFEE & TEA -->
+<section class="menu-category reveal d1" id="coffee">
+  <h2 class="menu-cat-title">Coffee &amp; Tea</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_e9dbc6e9c0c34e00a76a877dcafea397~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_e9dbc6e9c0c34e00a76a877dcafea397~mv2.jpeg" alt="Drip Coffee" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Drip Coffee</div>
+        <div class="menu-card-desc">Fresh brewed, bottomless refills</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$3.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🧊</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cold Brew</div>
+        <div class="menu-card-desc">Steeped 18 hours, served over ice</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_f9663fadbdb3421a94dc3b1af856ef7b~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_f9663fadbdb3421a94dc3b1af856ef7b~mv2.jpg" alt="Hot Tea" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Hot Tea</div>
+        <div class="menu-card-desc">Selection of loose-leaf teas</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$3.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_f9663fadbdb3421a94dc3b1af856ef7b~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_f9663fadbdb3421a94dc3b1af856ef7b~mv2.jpg" alt="Chai Latte" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Chai Latte</div>
+        <div class="menu-card-desc">Spiced black tea, steamed milk, honey</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.25</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_0cf951304ef64d7daf2f29c0c687ec25~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_0cf951304ef64d7daf2f29c0c687ec25~mv2.jpg" alt="Hot Chocolate" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Hot Chocolate</div>
+        <div class="menu-card-desc">Rich, made-to-order</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$4.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_acbfc1e9118d4a3a97aeff1eb3fc934f~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_acbfc1e9118d4a3a97aeff1eb3fc934f~mv2.png" alt="Frozen Hot Chocolate" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Frozen Hot Chocolate</div>
+        <div class="menu-card-desc">16 oz · 20 oz</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$7.00 / $7.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_d52cdcc26a684899806e18792a95858c~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_d52cdcc26a684899806e18792a95858c~mv2.png" alt="Assorted Juices &amp; Drinks" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Assorted Juices &amp; Drinks</div>
+        <div class="menu-card-desc">Various juices and sizes</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$3.75–$6.95</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINE & BEER -->
+<section class="menu-category reveal d1" id="wine">
+  <h2 class="menu-cat-title">Wine &amp; Beer</h2>
+  <p class="menu-cat-note">Full wine list available — ask your server. Beer and wine served during all live music performances.</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_c1b5a6a35918498480615614e09df376~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_c1b5a6a35918498480615614e09df376~mv2.png" alt="Red Wine by the Glass" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Red Wine by the Glass</div>
+        <div class="menu-card-desc">A rotating selection of reds</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$9.00–$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🍷</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">White Wine by the Glass</div>
+        <div class="menu-card-desc">A rotating selection of whites</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$9.00–$12.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_131993a52d7c4e66919313bbbc06c4e1~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_131993a52d7c4e66919313bbbc06c4e1~mv2.png" alt="Craft Beer" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Craft Beer</div>
+        <div class="menu-card-desc">Local Hudson Valley taps &amp; bottles</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$7.00–$9.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">🍺</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cider</div>
+        <div class="menu-card-desc">Local craft cider on tap</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$7.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_bffb3caf93094f05994788ca32e9a0f3~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_bffb3caf93094f05994788ca32e9a0f3~mv2.png" alt="Sangria" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Sangria</div>
+        <div class="menu-card-desc">Glass / Pitcher</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$8.90 / $33.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_cb5154538d674b18aa1815286e2e23e4~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_cb5154538d674b18aa1815286e2e23e4~mv2.png" alt="Mimosas" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Mimosas</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$8.75</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPRESSO BAR -->
+<section class="menu-category reveal d1" id="espresso">
+  <h2 class="menu-cat-title">Espresso Bar</h2>
+  <p class="menu-cat-note">Extra shots +$1.25</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_6837380b9106479d9c769228f8189a24~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_6837380b9106479d9c769228f8189a24~mv2.jpg" alt="Espresso" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Espresso</div>
+        <div class="menu-card-desc">Single or double</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$3.00–$3.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_fa770a95c2bd465482d00b752dd53044~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_fa770a95c2bd465482d00b752dd53044~mv2.png" alt="BeanRunner Latte" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">BeanRunner Latte</div>
+        <div class="menu-card-desc">Double shot, velvet-steamed milk, house syrup</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.25</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/d2f902_6d727e6bccb14e5f95eec6443f3d4a12~mv2.png/v1/fill/w_520,h_360,al_c,q_85/d2f902_6d727e6bccb14e5f95eec6443f3d4a12~mv2.png" alt="Cappuccino" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cappuccino</div>
+        <div class="menu-card-desc">Equal parts espresso, steamed milk, foam</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_060a05706f45477aaafc091c3aef4f89~mv2.jpeg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_060a05706f45477aaafc091c3aef4f89~mv2.jpeg" alt="Cortado" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Cortado</div>
+        <div class="menu-card-desc">Equal parts espresso and warm milk</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$4.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">☕</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Flat White</div>
+        <div class="menu-card-desc">Ristretto shots, microfoam milk</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.00</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">☕</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Macchiato</div>
+        <div class="menu-card-desc">Espresso marked with a touch of foam</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$3.75</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">☕</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Americano</div>
+        <div class="menu-card-desc">Espresso diluted with hot water</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$3.50</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_9a38e8390c4645bf8d87b981798ddbdf~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_9a38e8390c4645bf8d87b981798ddbdf~mv2.jpg" alt="Iced Latte" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Iced Latte</div>
+        <div class="menu-card-desc">Double shot, milk, ice</div>
+        <div class="menu-card-footer"><span class="menu-card-price">$5.25</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-card-img" src="https://static.wixstatic.com/media/7e70dc_c92fa313ba7744c8b6dac30f6fc5190a~mv2.jpg/v1/fill/w_520,h_360,al_c,q_85/7e70dc_c92fa313ba7744c8b6dac30f6fc5190a~mv2.jpg" alt="Café Mocha" loading="lazy">
+      <div class="menu-card-body">
+        <div class="menu-card-name">Café Mocha</div>
+        <div class="menu-card-desc">Small · Medium · Large</div>
+        <div class="menu-card-footer"><span class="menu-card-price range">$6.00 / $6.25 / $7.25</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-card-placeholder">✨</div>
+      <div class="menu-card-body">
+        <div class="menu-card-name">Flavored Syrups</div>
+        <div class="menu-card-desc">Vanilla, caramel, hazelnut, lavender, seasonal</div>
+        <div class="menu-card-footer"><span class="menu-card-price">+$0.75</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /menu-body -->
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
-<script src="js/collections.js" defer></script>
+<script src="js/main.js"></script>
+<script src="js/menu.js"></script>
 </body>
 </html>

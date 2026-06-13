@@ -3,24 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music &amp; Events — BeanRunner Cafe, Peekskill NY</title>
-<meta name="description" content="Live music every Friday and Saturday at BeanRunner Cafe in Peekskill, NY — jazz, salsa, reggae, R&B, and singer-songwriters. See this week's upcoming shows.">
-<link rel="canonical" href="https://www.beanrunnercafe.com/events.html">
+<title>Music &amp; Events — BeanRunner Cafe · Peekskill, NY</title>
+<meta name="description" content="Live music every Friday and Saturday at BeanRunner Cafe in Peekskill, NY. Jazz, salsa, reggae, R&B, and singer-songwriters. Full menu and wine available.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/events">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Music & Events — BeanRunner Cafe">
-<meta property="og:description" content="Live jazz and music every Friday and Saturday in Peekskill, NY.">
-<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/cafe_people.jpg">
+<meta property="og:title" content="Music &amp; Events — BeanRunner Cafe · Peekskill, NY">
+<meta property="og:description" content="Live music every Friday and Saturday in Peekskill, NY. Jazz, salsa, R&B. Full menu and wine available.">
+<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/interior.jpg">
+<meta property="og:url" content="https://www.beanrunnercafe.com/events">
+
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -30,9 +46,9 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html">About</a></li>
+    <li><a href="events.html" class="active">Shows</a></li>
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="events.html" aria-current="page">Music &amp; Events</a></li>
+    <li><a href="about.html">Our Story</a></li>
     <li><a href="gallery.html">Art Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
@@ -41,105 +57,225 @@
 
 <main>
 
-  <header class="page-hero" style="background-image:url('assets/images/cafe_people.jpg');">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">Live at BeanRunner</p>
-      <h1 class="page-hero-title">Music &amp; <em>Events</em></h1>
-      <p class="page-hero-sub">One of Westchester County's premier jazz and live music venues — every Friday and Saturday night, in an intimate landmarked room with excellent sound.</p>
-    </div>
-  </header>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="stage-light" aria-hidden="true"></div>
+    <div class="stage-floor" aria-hidden="true"></div>
+    <span class="hero-eyebrow reveal in">Live music · Every weekend</span>
+    <h1 class="hero-title reveal in">
+      Music &amp; <em>Events</em>
+    </h1>
+    <p class="hero-sub reveal in d1">
+      Join us every Friday and Saturday night for the best in live music. Full menu, beer and wine available during all performances.
+    </p>
+  </section>
 
-  <!-- WEEKLY SCHEDULE -->
-  <section class="section-pad bg-roast" aria-labelledby="weekly-title">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Every Week</p>
-        <h2 class="section-title" id="weekly-title">The Weekly Lineup</h2>
-      </div>
+  <!-- THE TWO NIGHTS -->
+  <section id="shows">
+    <span class="eyebrow reveal">The bill</span>
+    <h2 class="section-title reveal">Every week, <em>on stage</em></h2>
+
+    <div class="tickets">
+      <article class="ticket reveal d1">
+        <div class="ticket-main">
+          <span class="ticket-day">Every Friday</span>
+          <h3 class="ticket-name">Salsa · Reggae · <em>R&amp;B</em> &amp; Singer/Songwriters</h3>
+          <p class="ticket-desc">Our Friday performances rotate through salsa, reggae, R&amp;B and singer-songwriters — a different groove every week.</p>
+          <div class="ticket-showtime">
+            <span class="t-label">Seating</span>
+            <span class="t-value">6:30 pm</span>
+          </div>
+          <div class="ticket-showtime">
+            <span class="t-label">Show starts</span>
+            <span class="t-value">7:00 pm</span>
+          </div>
+          <a href="tel:+19147371701" class="btn-ghost">Reserve a Table</a>
+        </div>
+        <div class="ticket-stub">
+          <span class="adm">Admit · One · BeanRunner</span>
+          <span class="stub-day">Fri</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal d2">
+        <div class="ticket-main">
+          <span class="ticket-day">Every Saturday</span>
+          <h3 class="ticket-name">Live <em>Jazz</em></h3>
+          <p class="ticket-desc">Our Saturday performances feature the best in live Jazz. An intimate room where every seat is close to the stage.</p>
+          <div class="ticket-showtime">
+            <span class="t-label">Seating</span>
+            <span class="t-value">5:30 pm</span>
+          </div>
+          <div class="ticket-showtime">
+            <span class="t-label">Show starts</span>
+            <span class="t-value">6:00 pm</span>
+          </div>
+          <a href="tel:+19147371701" class="btn-ghost">Reserve a Table</a>
+        </div>
+        <div class="ticket-stub">
+          <span class="adm">Admit · One · BeanRunner</span>
+          <span class="stub-day">Sat</span>
+        </div>
+      </article>
     </div>
-    <div class="weekly-schedule">
-      <div class="schedule-row">
-        <div class="schedule-day">Friday</div>
-        <div class="schedule-info">
-          <div class="schedule-genre">Salsa, Reggae, R&amp;B &amp; Singer / Songwriters</div>
-          <div class="schedule-time">Doors 6:30pm · Show 7:00pm</div>
+  </section>
+
+  <!-- RESERVATIONS -->
+  <section id="reserve">
+    <div class="inner">
+      <div class="reserve-copy">
+        <span class="eyebrow reveal">Plan your visit</span>
+        <h2 class="reveal">How to <em>Reserve</em></h2>
+        <ul class="reserve-list">
+          <li class="reveal d1">
+            <div class="r-icon">☎</div>
+            <div>Seating fills quickly — give us a call at <strong>(914) 737-1701</strong> to reserve your table.</div>
+          </li>
+          <li class="reveal d1">
+            <div class="r-icon">⏰</div>
+            <div>Reservations can only be held until the start of the show (unless paid in advance).</div>
+          </li>
+          <li class="reveal d2">
+            <div class="r-icon">✉</div>
+            <div>Online reservations: email <strong>beanman.beanrunnercafe@gmail.com</strong> — must be made more than 48 hours in advance.</div>
+          </li>
+        </ul>
+        <div class="reserve-actions reveal d2">
+          <a href="tel:+19147371701" class="btn-primary">Call (914) 737-1701</a>
+          <a href="mailto:beanman.beanrunnercafe@gmail.com" class="btn-ghost">Email Us</a>
         </div>
-        <a href="tel:+19147371701" class="schedule-btn">Reserve Fri</a>
       </div>
-      <div class="schedule-row">
-        <div class="schedule-day">Saturday</div>
-        <div class="schedule-info">
-          <div class="schedule-genre">Live Jazz — The Best in Westchester</div>
-          <div class="schedule-time">Doors 5:30pm · Show 6:00pm</div>
+
+      <div class="reserve-aside reveal d1">
+        <span class="eyebrow">Hours</span>
+        <p>We're open seven days a week. Show nights run late — plan accordingly.</p>
+        <div class="hours-mini">
+          <div class="hm-row">
+            <span class="hm-day">Mon &amp; Tue</span>
+            <div><span class="hm-time">8:00 AM – 4:00 PM</span></div>
+          </div>
+          <div class="hm-row">
+            <span class="hm-day">Wed &amp; Thu</span>
+            <div><span class="hm-time">8:00 AM – 8:00 PM</span></div>
+          </div>
+          <div class="hm-row">
+            <span class="hm-day">Friday</span>
+            <div>
+              <span class="hm-time">8:00 AM – 11:00 PM</span>
+              <span class="hm-note">Live music · Show 7 pm</span>
+            </div>
+          </div>
+          <div class="hm-row">
+            <span class="hm-day">Saturday</span>
+            <div>
+              <span class="hm-time">8:00 AM – 11:00 PM</span>
+              <span class="hm-note">Live Jazz · Show 6 pm</span>
+            </div>
+          </div>
+          <div class="hm-row">
+            <span class="hm-day">Sunday</span>
+            <div><span class="hm-time">8:00 AM – 6:00 PM</span></div>
+          </div>
         </div>
-        <a href="tel:+19147371701" class="schedule-btn">Reserve Sat</a>
       </div>
     </div>
   </section>
 
-  <!-- UPCOMING (dynamic from CMS) -->
-  <section class="section-pad bg-ink" aria-labelledby="upcoming-title">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">On the Calendar</p>
-        <h2 class="section-title" id="upcoming-title">Upcoming Shows</h2>
-      </div>
-      <a href="tel:+19147371701" class="section-more">Reserve by Phone →</a>
-    </div>
-    <div class="events-list" id="events-list" aria-live="polite">
+  <!-- DYNAMIC CALENDAR -->
+  <section id="calendar">
+    <span class="eyebrow reveal">Upcoming Shows</span>
+    <h2 class="section-title reveal">Calendar of <em>Events</em></h2>
+    <div id="event-list" class="event-list" aria-live="polite">
       <p class="events-empty">Loading upcoming shows…</p>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
-<script src="js/collections.js" defer></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  var DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function fmt12(t) {
+    var p = t.split(':'), h = +p[0], m = p[1], ampm = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    return m === '00' ? h + ' ' + ampm : h + ':' + m + ' ' + ampm;
+  }
+
+  fetch('content/events.json')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var today = new Date().toISOString().slice(0, 10);
+      var upcoming = d.events.filter(function (e) { return e.date >= today; });
+      var list = document.getElementById('event-list');
+      if (!upcoming.length) {
+        list.innerHTML = '<p class="events-empty">No upcoming events scheduled — check back soon.</p>';
+        return;
+      }
+      list.innerHTML = upcoming.map(function (e) {
+        var dt = new Date(e.date + 'T12:00:00');
+        return '<article class="event-card reveal in">' +
+          '<div class="event-date">' +
+            '<span class="ec-month">' + MONTHS[dt.getMonth()] + '</span>' +
+            '<span class="ec-day">' + dt.getDate() + '</span>' +
+            '<span class="ec-dow">' + DAYS[dt.getDay()] + '</span>' +
+          '</div>' +
+          '<div class="event-info">' +
+            '<span class="event-type">' + e.type + '</span>' +
+            '<div class="event-name">' + e.name + '</div>' +
+            '<div class="event-detail">' + e.detail + '</div>' +
+          '</div>' +
+          '<div class="event-times">' +
+            '<span class="et-label">Doors</span>' +
+            '<span class="et-value">' + fmt12(e.doors) + '</span>' +
+            '<span class="et-label" style="margin-top:8px;">Show</span>' +
+            '<span class="et-value">' + fmt12(e.show) + '</span>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+    })
+    .catch(function () {
+      document.getElementById('event-list').innerHTML =
+        '<p class="events-empty">Unable to load events — please call us at (914) 737-1701.</p>';
+    });
+})();
+</script>
 </body>
 </html>

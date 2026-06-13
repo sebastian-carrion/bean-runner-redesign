@@ -3,24 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visit &amp; Contact — BeanRunner Cafe, Peekskill NY</title>
-<meta name="description" content="Visit BeanRunner Cafe at 201 S. Division Street, Peekskill, NY 10566. Call 914-737-1701 for table reservations, hours, and directions.">
-<link rel="canonical" href="https://www.beanrunnercafe.com/contact.html">
+<title>Contact — BeanRunner Cafe · Peekskill, NY</title>
+<meta name="description" content="Contact BeanRunner Cafe in Peekskill, NY. Call (914) 737-1701 or email us. 201 S. Division Street, Peekskill, NY 10566.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/contact">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Visit & Contact — BeanRunner Cafe">
-<meta property="og:description" content="Find us at 201 S. Division Street, Peekskill, NY. Call 914-737-1701.">
+<meta property="og:title" content="Contact — BeanRunner Cafe · Peekskill, NY">
+<meta property="og:description" content="Get in touch with BeanRunner Cafe. Call, email, or visit us at 201 S. Division Street, Peekskill, NY.">
 <meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/interior.jpg">
+<meta property="og:url" content="https://www.beanrunnercafe.com/contact">
+
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -30,133 +46,150 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Shows</a></li>
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="events.html">Music &amp; Events</a></li>
+    <li><a href="about.html">Our Story</a></li>
     <li><a href="gallery.html">Art Gallery</a></li>
-    <li><a href="contact.html" aria-current="page">Contact</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <header class="page-hero" style="background-image:url('assets/images/interior.jpg'); background-position:center 60%;">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">Find Us</p>
-      <h1 class="page-hero-title">Visit BeanRunner Cafe</h1>
-      <p class="page-hero-sub">In the heart of Peekskill's arts district — open daily, with live music every Friday and Saturday night.</p>
-    </div>
-  </header>
+  <!-- HERO -->
+  <div class="contact-hero">
+    <div class="contact-hero-glow" aria-hidden="true"></div>
+    <span class="contact-hero-eyebrow">Get in touch</span>
+    <h1>Come say <em>hello.</em></h1>
+    <p class="contact-hero-sub">We'd love to hear from you.</p>
+  </div>
 
-  <div class="contact-grid">
+  <!-- TWO-COLUMN SECTION -->
+  <div class="contact-section">
 
-    <!-- LEFT: info -->
-    <div>
-      <div class="contact-card">
-        <div class="contact-card-label">Address</div>
-        <p class="contact-card-addr">201 South Division Street<br>Peekskill, New York 10566</p>
-        <a class="contact-inline-link" href="https://maps.google.com/?q=201+S+Division+St+Peekskill+NY" target="_blank" rel="noopener">Get Directions →</a>
-      </div>
-
-      <div class="contact-pair">
-        <div class="contact-card">
-          <div class="contact-card-label">Phone</div>
-          <a href="tel:+19147371701">914-737-1701</a>
+    <!-- LEFT: FORM -->
+    <div class="form-card reveal">
+      <div class="form-card-title">Send us a message</div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
         </div>
-        <div class="contact-card">
-          <div class="contact-card-label">Email</div>
-          <a href="mailto:beanman.beanrunnercafe@gmail.com" style="font-size:12px;word-break:break-all;font-weight:400;">beanman.beanrunnercafe@gmail.com</a>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
         </div>
-      </div>
-
-      <div class="contact-hours">
-        <div class="contact-card-label">Hours of Operation</div>
-        <div class="contact-hours-grid">
-          <div><div class="contact-hours-day">Mon – Fri</div><div class="contact-hours-time">8:00am – 9:00pm</div></div>
-          <div><div class="contact-hours-day">Saturday</div><div class="contact-hours-time">8:00am – 10:00pm</div></div>
-          <div><div class="contact-hours-day">Sunday</div><div class="contact-hours-time">9:00am – 8:00pm</div></div>
-          <div><div class="contact-hours-day">Kitchen closes</div><div class="contact-hours-time" style="color:var(--smoke);">30 min before close</div></div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="How can we help?">
         </div>
-      </div>
-
-      <div class="contact-note">
-        <div class="contact-card-label">Table Reservations</div>
-        <p>Seating fills quickly for live music nights. Call <strong><a href="tel:+19147371701" style="color:var(--roast);">914-737-1701</a></strong> or email us — for weekend shows we recommend reserving more than 48 hours in advance.</p>
-      </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us more…" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message →</button>
+        <p class="form-note">We typically respond within 24 hours. For reservations, call <a href="tel:+19147371701">(914) 737-1701</a>.</p>
+      </form>
     </div>
 
-    <!-- RIGHT: map + get in touch -->
-    <div>
-      <iframe
-        class="contact-map"
-        title="Map to BeanRunner Cafe, 201 S. Division St., Peekskill NY"
-        src="https://maps.google.com/maps?q=201%20S%20Division%20St%2C%20Peekskill%2C%20NY%2010566&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <!-- RIGHT: INFO -->
+    <div class="contact-info-panel reveal d1">
 
-      <div class="contact-directions">
-        <div class="contact-card-label">Get in Touch</div>
-        <h2>The fastest way to reach us</h2>
-        <p>For reservations, private events, art gallery inquiries, or anything else — give us a call or send an email and we'll get right back to you. We're a small team, so the phone is always the quickest.</p>
-        <div class="about-cta-actions">
-          <a href="tel:+19147371701" class="btn-primary">Call 914-737-1701</a>
-          <a href="mailto:beanman.beanrunnercafe@gmail.com" class="btn-ghost on-light">Email Us</a>
+      <div>
+        <span class="info-eyebrow">Reach us</span>
+        <a href="tel:+19147371701" class="info-phone">(914) 737-1701</a>
+        <a href="mailto:beanman.beanrunnercafe@gmail.com" class="info-email">beanman.beanrunnercafe@gmail.com</a>
+        <div class="info-address">201 S. Division Street<br>Peekskill, NY 10566</div>
+      </div>
+
+      <div>
+        <span class="info-eyebrow">Follow us</span>
+        <div class="contact-social-row">
+          <a href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" class="social-btn" aria-label="BeanRunner on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" class="social-btn" aria-label="BeanRunner on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.026 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.093 24 18.1 24 12.073z"/></svg>
+          </a>
         </div>
       </div>
-    </div>
 
+      <div>
+        <span class="info-eyebrow">Hours</span>
+        <table class="hours-table">
+          <tr>
+            <td class="hours-day">Mon &amp; Tue</td>
+            <td class="hours-time">8:00 AM – 4:00 PM</td>
+          </tr>
+          <tr>
+            <td class="hours-day">Wed &amp; Thu</td>
+            <td class="hours-time">8:00 AM – 8:00 PM</td>
+          </tr>
+          <tr>
+            <td class="hours-day">Fri &amp; Sat</td>
+            <td class="hours-time">
+              8:00 AM – 11:00 PM
+              <span class="hours-note">Live music nights</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="hours-day">Sunday</td>
+            <td class="hours-time">8:00 AM – 6:00 PM</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-section reveal d2">
+    <span class="map-eyebrow">Find us</span>
+    <div class="map-street">201 S. Division Street</div>
+    <div class="map-city">Peekskill, NY 10566</div>
+    <a href="https://maps.google.com/?q=201+S+Division+St+Peekskill+NY" target="_blank" rel="noopener" class="btn-ghost">Open in Google Maps →</a>
   </div>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>

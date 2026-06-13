@@ -63,4 +63,32 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  /* ── Scroll reveal (IntersectionObserver) ──────────────────── */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+    io.observe(el);
+  });
+
+  /* ── Stage-light parallax (homepage only) ──────────────────── */
+  var light = document.querySelector('.stage-light');
+  if (light && document.body.classList.contains('page-home')) {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var drift = Math.min(window.scrollY * 0.14, 200);
+        light.style.transform = 'translateX(-50%) translateY(' + drift + 'px)';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 })();

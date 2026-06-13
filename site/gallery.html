@@ -3,24 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Art Gallery — BeanRunner Cafe, Peekskill NY</title>
-<meta name="description" content="BeanRunner Cafe hosts rotating art exhibits from local and regional artists in Peekskill, NY. See what's currently on the walls.">
-<link rel="canonical" href="https://www.beanrunnercafe.com/gallery.html">
+<title>Art Gallery — BeanRunner Cafe · Peekskill, NY</title>
+<meta name="description" content="BeanRunner Cafe hosts rotating monthly art exhibits from Hudson Valley artists. Free to browse any time we're open. Currently showing: Winzig.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/gallery">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Art Gallery — BeanRunner Cafe">
-<meta property="og:description" content="Rotating art exhibits from local and regional artists in Peekskill, NY.">
-<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/cafe2.jpg">
+<meta property="og:title" content="Art Gallery — BeanRunner Cafe · Peekskill, NY">
+<meta property="og:description" content="Rotating monthly art exhibits in Peekskill, NY. Free to browse. Currently showing Winzig.">
+<meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/interior.jpg">
+<meta property="og:url" content="https://www.beanrunnercafe.com/gallery">
+
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -30,10 +46,10 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html">About</a></li>
+    <li><a href="events.html">Shows</a></li>
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="events.html">Music &amp; Events</a></li>
-    <li><a href="gallery.html" aria-current="page">Art Gallery</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="gallery.html" class="active">Art Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
   </ul>
@@ -41,90 +57,141 @@
 
 <main>
 
-  <header class="page-hero" style="background-image:url('assets/images/cafe2.jpg');">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">Art Gallery</p>
-      <h1 class="page-hero-title">On the <em>Walls</em></h1>
-      <p class="page-hero-sub">A gallery space woven into the fabric of the café — rotating exhibits from local and regional artists, free to enjoy whenever we're open.</p>
-    </div>
-  </header>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="stage-light" aria-hidden="true"></div>
+    <div class="stage-floor" aria-hidden="true"></div>
+    <span class="hero-eyebrow reveal in">Art Gallery · Rotating monthly exhibits</span>
+    <h1 class="hero-title reveal in">
+      The Walls <em>Always Change</em>
+    </h1>
+    <p class="hero-sub reveal in d1">
+      BeanRunner doubles as a rotating gallery for Hudson Valley artists. A new exhibit hangs every month.
+    </p>
+  </section>
 
-  <section class="section-pad bg-ink" aria-labelledby="exhibits-title">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Currently Showing</p>
-        <h2 class="section-title" id="exhibits-title">Now Exhibiting</h2>
+  <!-- NOW EXHIBITING -->
+  <section id="now-exhibiting">
+    <div class="inner">
+      <div class="exhibit-image reveal d1">
+        <img
+          src="https://static.wixstatic.com/media/299644_b316b6300afa4767bbe7fe1bcfc6fe29~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85,enc_avif,quality_auto/winzig.jpg"
+          alt="Winzig — current exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
+        <div class="exhibit-badge">Now Exhibiting</div>
       </div>
-      <a href="contact.html" class="section-more">Exhibit With Us →</a>
-    </div>
-    <div class="exhibit-grid" id="exhibit-grid" aria-live="polite">
-      <p class="gallery-empty">Loading exhibits…</p>
+
+      <div class="exhibit-info">
+        <span class="eyebrow reveal">Current exhibit</span>
+        <h2 class="section-title reveal">The <em>Gallery</em></h2>
+        <p class="exhibit-artist reveal d1">Winzig</p>
+        <p class="reveal d2">Works by artist Winzig, currently on display at BeanRunner Café. Gallery is free to browse any time we're open.</p>
+        <span class="exhibit-note reveal d2">Exhibit began March 2026</span>
+        <div class="exhibit-links reveal d3">
+          <a href="contact.html" class="btn-primary">Visit the Gallery</a>
+          <a href="#past-exhibits" class="section-more">View past exhibits ↓</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT THE GALLERY -->
-  <section class="section-pad bg-white gallery-about-strip" aria-labelledby="gallery-about-title">
-    <div class="gallery-about-inner">
-      <p class="section-eyebrow">Art at BeanRunner</p>
-      <h2 class="section-title" id="gallery-about-title">Rotating Exhibits,<br><em>Always Free to View</em></h2>
-      <p class="gallery-about-body">Since 2008, BeanRunner has provided real wall space — and a real audience — to local and regional artists. Exhibits rotate on a monthly or bi-monthly schedule. There's no admission, no ticket, and no appointment needed: just stop by whenever we're open and discover something new on the walls.</p>
-      <p class="gallery-about-body">If you're an artist interested in exhibiting at BeanRunner, we'd love to hear from you.</p>
-      <div class="about-cta-actions" style="margin-top:28px;">
-        <a href="contact.html" class="btn-primary">Get in Touch →</a>
-        <a href="events.html" class="btn-ghost on-light">See Upcoming Shows</a>
+  <!-- PAST EXHIBITS -->
+  <section id="past-exhibits">
+    <span class="eyebrow reveal">Archive</span>
+    <h2 class="section-title reveal">Past <em>Exhibits</em></h2>
+    <p class="past-sub reveal d1">A selection of artists who have shown at BeanRunner. More images added as we build this archive.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal d1">
+        <img
+          src="https://static.wixstatic.com/media/d2f902_25ac391da8804e18a0c31800294745a4~mv2.jpg/v1/fill/w_600,h_600,q_90,enc_avif,quality_auto/exhibit1.jpg"
+          alt="Past exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
       </div>
+      <div class="gallery-item reveal d2">
+        <img
+          src="https://static.wixstatic.com/media/d2f902_4d1a6d4c37ea45098a740d8a65722c0a~mv2.jpg/v1/fill/w_600,h_600,q_90,enc_avif,quality_auto/exhibit2.jpg"
+          alt="Past exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
+      </div>
+      <div class="gallery-item reveal d3">
+        <img
+          src="https://static.wixstatic.com/media/d2f902_72f17b22def54a6c916df94b266f9721~mv2.jpg/v1/fill/w_600,h_600,q_90,enc_avif,quality_auto/exhibit3.jpg"
+          alt="Past exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
+      </div>
+      <div class="gallery-item reveal d1">
+        <img
+          src="https://static.wixstatic.com/media/d2f902_f27d952292d24788aacf73a023f26403~mv2.png/v1/fill/w_600,h_600,q_90,enc_avif,quality_auto/exhibit4.png"
+          alt="Past exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
+      </div>
+      <div class="gallery-item reveal d2">
+        <img
+          src="https://static.wixstatic.com/media/d2f902_c08d3d57fbbd470fb2979d4a443bb733~mv2.png/v1/fill/w_600,h_600,q_90,enc_avif,quality_auto/exhibit5.png"
+          alt="Past exhibit at BeanRunner Cafe"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <p class="gallery-note reveal d1">
+      More exhibits to be added — contact us if you're an artist interested in showing at BeanRunner.
+    </p>
+  </section>
+
+  <!-- ARTIST INQUIRY CTA -->
+  <section id="inquiry">
+    <div class="inner">
+      <span class="eyebrow reveal">Open submissions</span>
+      <h2 class="reveal">Interested in showing your work at <em>BeanRunner?</em></h2>
+      <p class="reveal d1">We accept submissions from Hudson Valley artists on a rolling basis.</p>
+      <a href="contact.html" class="btn-primary reveal d2">Get in Touch</a>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
-<script src="js/collections.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>

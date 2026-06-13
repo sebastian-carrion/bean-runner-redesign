@@ -3,24 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — BeanRunner Cafe, Peekskill NY</title>
-<meta name="description" content="How Ted Bitter and Drew Claxton restored a landmarked 1850s blacksmith shop in Peekskill, NY into BeanRunner Cafe — a café, jazz venue, and art gallery since 2008.">
-<link rel="canonical" href="https://www.beanrunnercafe.com/about.html">
+<title>Our Story — BeanRunner Cafe · Peekskill, NY</title>
+<meta name="description" content="The story of BeanRunner Cafe — founded in 2008 by Ted Bitter and Drew Claxton in a restored 1850s landmark building in Peekskill, NY.">
+<link rel="canonical" href="https://www.beanrunnercafe.com/about">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Our Story — BeanRunner Cafe">
-<meta property="og:description" content="A café with a soul: the story of BeanRunner Cafe in Peekskill, NY.">
+<meta property="og:title" content="Our Story — BeanRunner Cafe · Peekskill, NY">
+<meta property="og:description" content="Two dreams, one historic building, eighteen years of community. The story of BeanRunner Cafe.">
 <meta property="og:image" content="https://www.beanrunnercafe.com/assets/images/interior.jpg">
+<meta property="og:url" content="https://www.beanrunnercafe.com/about">
+
 <link rel="icon" href="assets/images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "BeanRunner Cafe",
+  "url": "https://www.beanrunnercafe.com/",
+  "address": { "@type": "PostalAddress", "streetAddress": "201 S. Division Street", "addressLocality": "Peekskill", "addressRegion": "NY", "postalCode": "10566", "addressCountry": "US" },
+  "telephone": "+1-914-737-1701",
+  "foundingDate": "2008"
+}
+</script>
 </head>
 <body>
 
-<nav class="site-nav">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+    <span>Live Jazz — Every Saturday · Show 6:00 pm</span><span class="dot">◆</span>
+    <span>Salsa · Reggae · R&amp;B — Fridays · Show 7:00 pm</span><span class="dot">◆</span>
+    <span>New Art Exhibit Hangs Monthly</span><span class="dot">◆</span>
+    <span>Reserve: (914) 737-1701</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<nav>
   <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe — home">
-    <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="44" height="44">
+    <img src="assets/images/logo.png" alt="" width="36" height="36">
     <span>
       <span class="nav-logo-text">BeanRunner</span>
       <span class="nav-logo-sub">Café · Peekskill, NY</span>
@@ -30,181 +58,149 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="about.html" aria-current="page">About</a></li>
+    <li><a href="events.html">Shows</a></li>
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="events.html">Music &amp; Events</a></li>
+    <li><a href="about.html" class="active">Our Story</a></li>
     <li><a href="gallery.html">Art Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="tel:+19147371701" class="nav-cta">Reserve a Table</a></li>
   </ul>
 </nav>
 
-<main class="about-page">
+<main>
 
   <!-- HERO -->
-  <header class="page-hero" style="background-image:url('assets/images/interior.jpg');">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">Our Story</p>
-      <h1 class="page-hero-title">A Cafe With a Soul</h1>
+  <section id="hero">
+    <div class="stage-light" aria-hidden="true"></div>
+    <div class="stage-floor" aria-hidden="true"></div>
+    <span class="hero-eyebrow reveal in">Est. 2008 · Peekskill, NY</span>
+    <h1 class="hero-title reveal in">
+      About <em>BeanRunner</em> Café
+    </h1>
+    <p class="hero-sub reveal in d1">
+      The story of two dreams, one historic building, and eighteen years of community.
+    </p>
+  </section>
+
+  <!-- THE STORY -->
+  <section id="story">
+    <span class="eyebrow reveal">Our history</span>
+    <h2 class="section-title reveal">The <em>Story</em></h2>
+
+    <div class="story-grid">
+      <div class="story-copy">
+        <p class="reveal d1">The BeanRunner Café is the answer to <strong>Ted Bitter's</strong> and <strong>Drew Claxton's</strong> lifelong dreams — Ted wanted to create a neighborhood café and Drew wanted to restore historic buildings. Together, they did both. The couple purchased an old, abandoned building in 2001, did a historic restoration, landmarked the building, and opened the Café in 2008.</p>
+
+        <p class="reveal d1">The building, built circa 1850, was originally a wagon repair and blacksmith shop. In the 1950s it was Gardineer's Hardware and Stove Shop, and then operated as one of Peekskill's many Hairnet Factories well into the 1990s. However, by 2001 it was a phantom building, covered in stucco, painted grey, and almost no-one even knew it was there. But as Drew still says, <em>"When I saw it I knew, it was a building with a soul."</em></p>
+
+        <p class="reveal d2">So in 2008, Ted opened the BeanRunner Cafe. He had grown up in Kingston Jamaica, <em>"in one of those houses where everyone gathered."</em> At 16 years old, he immigrated to the U.S., joined the Army and went to Vietnam, and spent the next 30 years frequenting cafes in Brooklyn and Greenwich Village, looking for that sense of community, and thinking about how to create it.</p>
+
+        <p class="reveal d2">Since 2008, the BeanRunner Café has grown to be one of the premier jazz and live music venues in Westchester County, loved by musicians and audiences alike. The Café also has rotating art exhibits and has a small family room where children can come and play.</p>
+      </div>
+
+      <div class="story-photos">
+        <figure class="reveal d1">
+          <img
+            src="https://static.wixstatic.com/media/299644_622aa85bdab94f6f93a41b0a09cf01d0~mv2.jpg/v1/fill/w_600,h_450,al_c,q_85,enc_avif,quality_auto/photo.jpg"
+            alt="BeanRunner Cafe — exterior and community"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="reveal d2">
+          <img
+            src="https://static.wixstatic.com/media/d2f902_8bb6bdc91c204207bd4223451cffefe5~mv2.jpg/v1/fill/w_600,h_450,al_c,q_85,enc_avif,quality_auto/overall.jpg"
+            alt="BeanRunner Cafe — overall view"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="reveal d2">
+          <img
+            src="https://static.wixstatic.com/media/d2f902_d4a1d31994c14a639634a872a1bef799~mv2.jpg/v1/fill/w_600,h_540,al_c,q_85,enc_avif,quality_auto/interior.jpg"
+            alt="BeanRunner Cafe — interior"
+            loading="lazy"
+          >
+        </figure>
+        <figure class="reveal d3">
+          <img src="assets/images/interior.jpg" alt="BeanRunner Cafe interior" loading="lazy">
+        </figure>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <!-- INTRO PHOTOS -->
-  <div class="about-intro">
-    <div class="about-intro-photos">
-      <img src="assets/images/welcome.jpg" alt="BeanRunner Cafe storefront welcome" loading="lazy">
-      <img src="assets/images/cafe2.jpg" alt="BeanRunner Cafe interior detail" loading="lazy">
+  <!-- FOUNDERS -->
+  <section id="founders">
+    <div class="inner">
+      <span class="eyebrow reveal">The people behind the place</span>
+      <h2 class="section-title reveal">Meet the <em>Founders</em></h2>
+
+      <div class="founders-grid">
+        <article class="founder-card reveal d1">
+          <span class="founder-label">Co-Founder</span>
+          <div class="founder-rule"></div>
+          <h3 class="founder-name">Ted Bitter</h3>
+          <p class="founder-bio">Café founder. Grew up in Kingston, Jamaica — <em>"in one of those houses where everyone gathered."</em> After serving in Vietnam, he spent 30 years looking for that sense of community in Brooklyn cafés, before building it himself here in Peekskill.</p>
+        </article>
+
+        <article class="founder-card reveal d2">
+          <span class="founder-label">Co-Founder</span>
+          <div class="founder-rule"></div>
+          <h3 class="founder-name">Drew Claxton</h3>
+          <p class="founder-bio">Historic preservationist and co-founder. Her vision to restore the abandoned 1850s building gave BeanRunner its soul. <em>"When I saw it I knew, it was a building with a soul."</em></p>
+        </article>
+      </div>
     </div>
-  </div>
-
-  <!-- STORY + TIMELINE -->
-  <div class="about-body-grid">
-    <div class="about-narrative">
-      <p class="section-eyebrow">The Origin</p>
-      <h2>Ted &amp; Drew's<br>Lifelong Dream</h2>
-      <p>The BeanRunner Café is the answer to Ted Bitter's and Drew Claxton's lifelong dreams — Ted wanted to create a neighborhood café, and Drew wanted to restore historic buildings. Together, they did both.</p>
-      <p>The couple purchased an old, abandoned building in 2001, undertook a historic restoration, landmarked the building, and opened the Café in 2008. The building, built circa 1850, was originally a wagon repair and blacksmith shop. In the 1950s it was Gardineer's Hardware and Stove Shop, then operated as one of Peekskill's many hairnet factories well into the 1990s.</p>
-      <p>By 2001 it was a phantom building — covered in stucco, painted grey, almost no one even knew it was there. But as Drew still says, <em>"When I saw it I knew, it was a building with a soul."</em></p>
-
-      <blockquote class="about-pullquote">
-        <p>"I had grown up in Kingston Jamaica, in one of those houses where everyone gathered."</p>
-        <cite>— Ted Bitter, Founder</cite>
-      </blockquote>
-
-      <p>At 16, Ted immigrated to the U.S., joined the Army, and served in Vietnam. He spent the next 30 years frequenting cafes in Brooklyn and Greenwich Village — looking for that sense of community, and thinking about how to create it. Since 2008, BeanRunner has grown into one of the premier jazz and live music venues in Westchester County, beloved by musicians and audiences alike, with rotating art exhibits and a small family room where children can come and play.</p>
-    </div>
-
-    <aside class="about-timeline">
-      <p class="section-eyebrow">Timeline</p>
-      <div class="timeline-item">
-        <div class="timeline-rail"><span class="timeline-dot"></span><span class="timeline-line"></span></div>
-        <div>
-          <div class="timeline-year">c. 1850</div>
-          <div class="timeline-head">Building constructed</div>
-          <div class="timeline-desc">Wagon repair &amp; blacksmith shop, 201 S. Division St.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-rail"><span class="timeline-dot"></span><span class="timeline-line"></span></div>
-        <div>
-          <div class="timeline-year">1950s – 1990s</div>
-          <div class="timeline-head">Hardware store → Hairnet factory</div>
-          <div class="timeline-desc">Gardineer's Hardware, then decades as a hairnet factory before abandonment.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-rail"><span class="timeline-dot"></span><span class="timeline-line"></span></div>
-        <div>
-          <div class="timeline-year">2001</div>
-          <div class="timeline-head">Purchased &amp; restored</div>
-          <div class="timeline-desc">Historic restoration, officially landmarked by the City of Peekskill.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-rail"><span class="timeline-dot"></span><span class="timeline-line"></span></div>
-        <div>
-          <div class="timeline-year">2008</div>
-          <div class="timeline-head">BeanRunner Cafe opens</div>
-          <div class="timeline-desc">Food, live music, art gallery &amp; community gathering place — all under one roof.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-rail"><span class="timeline-dot"></span><span class="timeline-line"></span></div>
-        <div>
-          <div class="timeline-year">Today</div>
-          <div class="timeline-head">Premier jazz venue in Westchester</div>
-          <div class="timeline-desc">Live music every Friday &amp; Saturday, rotating art exhibits, family room.</div>
-        </div>
-      </div>
-    </aside>
-  </div>
-
-  <!-- PORTRAITS -->
-  <div class="about-portraits">
-    <figure class="portrait">
-      <img src="assets/images/cafe_people.jpg" alt="The founders of BeanRunner Cafe" loading="lazy">
-      <figcaption class="portrait-label">
-        <div class="portrait-label-eyebrow">The Founders</div>
-        <div class="portrait-label-name">Ted Bitter &amp; Drew Claxton</div>
-      </figcaption>
-    </figure>
-    <figure class="portrait">
-      <img src="assets/images/interior.jpg" alt="The BeanRunner Cafe community space" loading="lazy">
-      <figcaption class="portrait-label">
-        <div class="portrait-label-eyebrow">The Community</div>
-        <div class="portrait-label-name">Est. Peekskill, New York · 2008</div>
-      </figcaption>
-    </figure>
-  </div>
-
-  <!-- STATS -->
-  <div class="about-stats">
-    <div class="about-stat"><div class="about-stat-num">18+</div><div class="about-stat-label">Years Open</div></div>
-    <div class="about-stat"><div class="about-stat-num">1850</div><div class="about-stat-label">Building Est.</div></div>
-    <div class="about-stat"><div class="about-stat-num">2×</div><div class="about-stat-label">Live Shows / Week</div></div>
-    <div class="about-stat"><div class="about-stat-num">#1</div><div class="about-stat-label">Jazz Venue · Westchester</div></div>
-  </div>
+  </section>
 
   <!-- CTA -->
-  <div class="about-cta">
-    <div>
-      <h2>Come visit us in Peekskill</h2>
-      <p>201 S. Division Street · Open daily · Live music every Friday &amp; Saturday</p>
+  <section id="cta">
+    <div class="inner">
+      <span class="eyebrow reveal">Come visit</span>
+      <h2 class="reveal">Come experience it <em>yourself</em></h2>
+      <p class="reveal d1">201 S. Division St. · Peekskill, NY 10566 · Open daily from 8:00 AM</p>
+      <div class="cta-actions reveal d2">
+        <a href="contact.html" class="btn-primary">Find Us</a>
+        <a href="events.html" class="btn-ghost">See This Week's Shows</a>
+      </div>
     </div>
-    <div class="about-cta-actions">
-      <a href="contact.html" class="btn-primary">Get Directions</a>
-      <a href="events.html" class="btn-ghost">See This Week's Shows</a>
-    </div>
-  </div>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-top">
+<footer>
+  <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo.png" alt="" class="nav-logo-img" width="52" height="52">
+      <a href="index.html" class="nav-logo" aria-label="BeanRunner Cafe">
+        <img src="assets/images/logo.png" alt="" style="width:44px;height:44px;border-radius:50%;">
         <span>
-          <span class="nav-logo-text" style="font-size:24px;">BeanRunner</span>
+          <span class="nav-logo-text" style="font-size:20px;">BeanRunner</span>
           <span class="nav-logo-sub">Café · Peekskill, NY</span>
         </span>
       </a>
       <p>A neighborhood café, live music venue, and art gallery in the heart of Peekskill, NY. Est. 2008.</p>
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/beanman2/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Facebook">f</a>
-        <a class="social-link" href="https://www.instagram.com/thebeanrunnercafe/" target="_blank" rel="noopener" aria-label="BeanRunner Cafe on Instagram">ig</a>
-      </div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Shows</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Music &amp; Events</a></li>
+        <li><a href="about.html">Our Story</a></li>
         <li><a href="gallery.html">Art Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit</div>
-      <div class="footer-contact-item">201 S. Division Street<br>Peekskill, NY 10566</div>
-      <div class="footer-contact-item" style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:+19147371701">914-737-1701</a></div>
-      <div class="footer-contact-item"><strong>Email:</strong><br><a href="mailto:beanman.beanrunnercafe@gmail.com">beanman.beanrunnercafe@gmail.com</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">Hours</div>
-      <div class="footer-contact-item"><strong>Mon–Fri</strong><br>8:00am – 9:00pm</div>
-      <div class="footer-contact-item"><strong>Saturday</strong><br>8:00am – 10:00pm</div>
-      <div class="footer-contact-item"><strong>Sunday</strong><br>9:00am – 8:00pm</div>
+      <span class="footer-contact">201 S. Division Street<br>Peekskill, NY 10566</span>
+      <a href="tel:+19147371701" class="footer-contact" style="color:var(--gold);margin-top:12px;">(914) 737-1701</a>
+      <a href="mailto:beanman.beanrunnercafe@gmail.com" class="footer-contact">beanman.beanrunnercafe@gmail.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BeanRunner Cafe · 201 S. Division St. · Peekskill, NY</div>
-    <div class="footer-copy">Good food · Fine wine · Great music</div>
+    <span>© 2026 BeanRunner Cafe · Peekskill, NY</span>
+    <span>Good food · Fine wine · Great music</span>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>
